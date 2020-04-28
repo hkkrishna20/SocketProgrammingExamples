@@ -1,0 +1,80 @@
+#program to perform the mergesort on given arrays
+print("Enter the no of elements in the matrix\n");
+$n=<STDIN>;
+print("Enter the elements in the matrix\n");
+for($i=0;$i<$n;$i++)
+{
+	$a[$i]=<STDIN>;
+}
+merge_sort(\@a);
+sub merge_sort
+{
+ 	my $A=@_;
+	$n=@{$A};
+	if($n>1)
+	{
+		$m=int($n/2);
+		for($i=0;$i<$m;$i++)
+		{
+			$b[$i]=${$A}[$i];
+		}
+		for($i=$m;$i<$n;$i++)
+		{
+			$c[$i-$m]=${$A}[$i];
+		}
+	}
+}
+#print @a;
+#print("mat b\n");
+#print @b;
+#print("mat c\n");
+#print @c;
+merge_sort(\@b);
+merge_sort(\@c);
+merge(\@b,\@c,\@a);
+sub merge
+{
+	my ($x,$y,$z)=@_;
+	
+	
+	$p=length(@{$x});
+	$q=length(@{$y});
+	$i=0;$j=0;$k=0;
+	while($i<$p && $j<$q)
+	{
+		if(${$x}[$i]<=${$y}[$i])
+		{
+			${$z}[$k]=${$x}[$i];
+			$i++;
+		}
+		else
+		{
+			${$z}[$k]=${$y}[$j];
+			$j++;
+		}
+		$k++;
+	}
+	if($i==$p)
+	{
+		for($l=$j;$l<$q;$l++)
+		{
+			${$z}[$k]=${$y}[$l];
+			$k++;
+		}
+	}
+	else
+	{
+		for($l=$i;$l<$p;$l++)
+		{
+			${$z}[$k]=${$x}[$l];
+			$k++;
+		}
+	}
+	
+}
+print("The result of merge sort is\n");
+for($i=0;$i<$n;$i++)
+{
+	print($a[$i]);
+}
+print("\n");
