@@ -1,0 +1,87 @@
+use IO::Socket;
+#####################################
+# Client Script:
+# Copyright 2003 (c) Philip Yuson
+# this program is distributed according to
+# the terms of the Perl license
+# Use at your own risk
+#####################################
+$remote = IO::Socket::INET->new(
+                Proto   => 'tcp',       # protocol
+                PeerAddr=> 'localhost', # Address of server
+                PeerPort=> "8081",      # port of server
+                Reuse   => 1,
+                ) or die "$!";
+print "Connected to ", $remote->peerhost, # Info message
+      " on port: ", $remote->peerport, "\n";
+$remote->autoflush(1);  # Send immediately
+while (<>) {    # Get input from STDIN
+        print $remote $_;       # Send to Server
+        last if m/^end/gi;      # If 'end' then exit loop
+        my $line = <$remote>;   # Receive echo from server
+        if ($line ne $_) {      # If not the same as input
+                print "Error in sending output\n"; # error
+                exit;           # Terminate
+        }
+}
+my $res = <$remote>;            # Receive result from server
+$res =~ m/result=(\d*)/gi;      # Get the numeric result from message
+print "Result: $1\n";           # Print the result
+print "End of client\n";        # End of client
+close $remote;                  # Close socket
+
+
+
+
+
+
+
+use IO::Socket;
+#####################################
+# Server Script: 
+# Copyright 2003 (c) Philip Yuson 
+# this program is distributed according to 
+# the terms of the Perl license
+# Use at your own risk
+#####################################
+$local = IO::Socket::INET->new(
+                Proto     => 'tcp',             # protocol
+                LocalAddr => 'localhost:8081',  
+		# Host and port to listen to
+                # Change the port if 8081 is being used
+                Reuse     => 1
+                ) or die "$!";
+$local->listen();       # listen
+$local->autoflush(1);   # To send response immediately
+print "At your service. Waiting...\n";
+my $addr;       # Client handle
+while ($addr = $local->accept() ) {     # receive a request
+        print   "Connected from: ", $addr->peerhost();  
+	# Display messages
+        print   " Port: ", $addr->peerport(), "\n";
+        my $result;             # variable for Result
+        while (<$addr>) {       # Read all messages from client 
+                                # (Assume all valid numbers)
+                last if m/^end/gi;      # if message is 'end' 
+                                        # then exit loop
+                print "Received: $_";   # Print received message
+                print $addr $_;         # Send received message back 
+                                        # to verify
+                $result += $_;          # Add value to result
+        }
+        chomp;                  # Remove the 
+        if (m/^end/gi) {        # You need this. Otherwise if 
+                                # the client terminates abruptly
+                                # The server will encounter an 
+                                # error when it sends the result back
+                                # and terminate
+                my $send = "result=$result";    # Format result message
+                print $addr "$send\n";          # send the result message
+                print "Result: $send\n";        # Display sent message
+        }
+        print "Closed connection\n";    # Inform that connection 
+                                        # to client is closed
+        close $addr;    # close client
+        print "At your service. Waiting...\n";  
+# Wait again for next request
+}

@@ -1,0 +1,6 @@
+average_span_of_male	75
+average_span_of_female	80
+deduction_for_bp/sugar	 5
+deduction_for_cancer	10
+addition_for_exercise	 5
+addition_for_vegetarian	 5
