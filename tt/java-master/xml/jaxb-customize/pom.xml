@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+ 
+	<groupId>name.javacode.xml.jaxb</groupId>
+	<version>0.0.1-SNAPSHOT</version>
+
+  <artifactId>jaxb-customize</artifactId>
+  <name>jaxb-customize</name>
+
+  <description>
+    The Java Tutorials, Lesson: Introduction to JAXB, practice code  
+  </description>
+
+  <profiles>
+    <profile>
+      <id>jaxb-gen</id>
+      <build>
+        <defaultGoal>clean generate-sources</defaultGoal>
+        <plugins>
+          <plugin>
+            <groupId>org.jvnet.jaxb2.maven2</groupId>
+            <artifactId>maven-jaxb2-plugin</artifactId>
+            <configuration>
+              <forceRegenerate>true</forceRegenerate>
+            </configuration>
+            <executions>
+              <execution>
+                <id>customize-inline-gen</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <phase>generate-sources</phase>
+                <configuration>
+                  <episodeFile>${project.basedir}/src/main/resources/META-INF/customize-inline.episode</episodeFile>
+                  <generatePackage>name.javacode.xml.jaxb.customize.inline.generated</generatePackage>
+                  <schemaDirectory>src/main/resources/customize-inline</schemaDirectory>
+                </configuration>
+              </execution>
+              <execution>
+                <id>customize-external-gen</id>
+                <goals>
+                  <goal>generate</goal>
+                </goals>
+                <phase>generate-sources</phase>
+                <configuration>
+                  <episodeFile>${project.basedir}/src/main/resources/META-INF/customize-external.episode</episodeFile>
+                  <generatePackage>name.javacode.xml.jaxb.customize.external.generated</generatePackage>
+                  <schemaDirectory>src/main/resources/customize-external</schemaDirectory>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

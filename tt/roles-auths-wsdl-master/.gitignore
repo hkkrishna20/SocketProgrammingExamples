@@ -1,0 +1,6 @@
+roles-auths-wsdl.iml
+/target
+*~
+.classpath
+.project
+.settings/

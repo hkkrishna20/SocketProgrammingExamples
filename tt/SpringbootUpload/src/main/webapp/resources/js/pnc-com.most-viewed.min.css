@@ -1,0 +1,42 @@
+.most-viewed{background:#f3f3f3}
+.most-viewed .content-inner{width:320px;margin:0 auto;padding-bottom:30px;padding-top:15px}
+.most-viewed-tout-container .userstyle-1{background:#fff}
+.most-viewed-tout-container .userstyle-2{background-color:#f1f4f6}
+.most-viewed-tout-container .header-text{font-family:"PNC Brand Bold";font-size:25px;color:#484848;line-height:normal;text-align:center;margin:0}
+.most-viewed-tout-container .header-none{height:25px}
+.most-viewed-teaser{position:relative;text-align:center;height:100%}
+.most-viewed-teaser:hover a p.heading{color:#f58025}
+.most-viewed-teaser a{display:block;height:100%}
+.most-viewed-teaser a:hover{cursor:pointer}
+.most-viewed-teaser p.heading{top:5px;left:0;z-index:10;width:100%;text-align:center;color:#0069aa}
+.most-viewed-teaser p.link{top:86px;left:0;z-index:10;width:141px;text-align:center;font-family:arial;font-weight:bold;color:#484848;font-size:10px}
+.most-viewed-teaser .link a{color:#484848;background:url(../img/icon_most_viewed_link.gif) no-repeat center right;padding-right:10px}
+.most-viewed-tout-container .content-outer{padding:15px}
+.most-viewed-tout-container .content-inner{margin:0 auto;width:282px}
+.most-viewed-tout-container .content-inner .most-viewed-tout{width:15%}
+#mv #mvBody #arrowLeft,#mv #mvBody #arrowRight{display:none}
+.most-viewed-tout-container .content-inner #mvBottom{display:none}
+#mostViewedTout-container .most-viewed-tout{border:0}
+#mostViewedTout-container .swiper-wrapper{padding-top:20px}
+#mostViewedTout-container .swiper-wrapper .swiper-slide a{font-weight:normal}
+#mostViewedTout-container-pag{position:relative}
+.swiper-slide{border:0}
+#mostviewed .swiper-slide{border:0}
+@media only screen and (min-width:600px){.most-viewed .content-inner{width:600px}
+.most-viewed-tout-container .header-text{border:0;padding:0}
+.most-viewed .content-inner h2{display:none}
+.cq-wcm-edit .most-viewed .content-inner h2{display:block}
+.most-viewed-tout-container .content-inner{width:470px}
+#mv #mvBody #arrowLeft,#mv #mvBody #arrowRight{display:block;float:left;cursor:pointer}
+#mv #mvBody #arrowLeft{width:21px;background:url(../img/mv_tablet_arrowLeft.gif)}
+#mv #mvBody #arrowRight{width:22px;background:url(../img/mv_tablet_arrowRight.gif)}
+.most-viewed-tout-container .content-inner #mvBottom{display:block;height:8px;width:470px;background:url(../img/mv_tablet_dropDownShadow.gif)}
+.accordion #mostviewed .most-viewed-tout-container .header-text{text-align:left}
+}
+@media only screen and (min-width:980px){.most-viewed .content-inner{width:940px}
+.most-viewed-tout-container .content-outer{padding-bottom:20px}
+.most-viewed-tout-container .content-inner{margin:0 auto;width:910px}
+#mv #mvBody #arrowLeft,#mv #mvBody #arrowRight{display:none;background:0}
+.most-viewed-tout-container .content-inner #mvBottom{display:block;height:7px;background:url(../img/mv_desktop_dropDownShadow.gif);width:100%}
+.most-viewed-tout-container .header-text{border:0;padding:0}
+}

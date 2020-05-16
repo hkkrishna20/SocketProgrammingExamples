@@ -1,0 +1,115 @@
+#program to solve knapsack problem
+print("Enter the capacity of the knapsack\n");
+$W=<STDIN>;
+print("Enter the items and");
+print("Enter ctrl+d to terminate\n");
+@list=<STDIN>;
+$n=@list;
+for($i=0;$i<$n;$i++)
+{
+	printf("Enter the weight of item %d:",$i);
+	$weight[$i]=<STDIN>;
+	printf("Enter the value of item %d :",$i);
+	$value[$i]=<STDIN>;
+}	
+$N=2**$n; 
+print("The knapsack subsets are\n");
+print("-----------------------------------------------------------------------\n");
+print("SUBSET\t\tTOTALWEIGHT\t\tTOTALVALUE\t\t\n");
+print("-----------------------------------------------------------------------\n");
+print(" (/)\t\t\t0\t\t\t0\n");
+#$subset[0][0]=" ^ ";
+for($i=1;$i<$N;$i++)
+{
+		$weig=0,$val=0;
+		@bin=binary_gen($i);
+		$l=0;
+		if(@bin<$n)
+		{
+			for($j=0;$j<($n-@bin);$j++)
+			{
+				$sub[$l]=0;
+				$l++;
+			}
+			for($k=0;$k<@bin;$k++)
+			{
+				$sub[$l]=$bin[$k];
+				$l++;
+			}
+		
+		}
+		else
+		{
+			for($k=0;$k<@bin;$k++)
+			{
+				$sub[$l]=$bin[$k];
+				$l++;
+			}
+		}
+		print("{");
+		for($m=0;$m<@sub;$m++)
+		{
+			if($sub[$m]==1)
+			{
+				$subset[$i][$m]=$list[$m];
+				$weig=$weig+$weight[$m];
+				$val=$val+$value[$m];
+			}
+			chomp($subset[$i][$m]);
+			print("$subset[$i][$m]");
+			#print("\b");
+		}
+		$weight[$i]=$weig;
+		$value[$i]=$val;
+		#print("\b");
+		print("}");
+		if($weight[$i]<=$W)
+		{
+			print("\t\t\t");
+			print($weight[$i]);
+			print("\t\t\t");
+			print($value[$i]);
+			print("\n");
+		}
+		else
+		{
+			print("\t\t\t");
+			print($weight[$i]);
+			print("\t\t\t");
+			print("not feasible");
+			print("\n");
+		}
+}
+print("-----------------------------------------------------------------------\n");
+$maxval=0;
+for($i=1;$i<$N;$i++)
+{
+	if($weight[$i]<=$W)
+	{
+		if($value[$i]>$maxval)
+		{
+			$maxval=$value[$i];
+			$maxweight=$weight[$i];
+			$index=$i;
+		}
+	}
+		
+}
+print("The optimal solution is\n");
+print("SUBSET\t\tWEIGHT\t\tVALUE\n");
+print("$subset[$i]\t\t$maxweight\t\t$maxval\n");
+sub binary_gen
+{
+	$n1=shift;
+	$j=0;
+	while($n1>0)
+	{
+		$b[$j]=($n1 % 2);
+		$n1=int($n1/2);
+		$j++;
+	}
+	@b=reverse(@b);
+	return @b;
+}
+
+ 

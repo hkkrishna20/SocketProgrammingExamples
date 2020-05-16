@@ -1,0 +1,55 @@
+apiVersion: apps/v1beta2
+kind: StatefulSet
+metadata:
+  name: couchbase-node
+  labels:
+    app: couchbase
+spec:
+  podManagementPolicy: Parallel
+  updateStrategy:
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      app: couchbase-node
+  serviceName: couchbase
+  template:
+    metadata:
+      labels:
+        app: couchbase-node
+    spec:
+      containers:
+      - env:
+        - name: DATA_MEMORY_QUOTA_MB
+          value: "256"
+        - name: INDEX_MEMORY_QUOTA_MB
+          value: "256"
+        - name: SEARCH_MEMORY_QUOTA_MB
+          value: "256"
+        - name: ADMIN_USER
+          value: admin
+        - name: ADMIN_PASSWORD
+          value: admin123
+        - name: SERVICENAME
+          value: couchbase
+        image: asarkar/couchbase
+        imagePullPolicy: Never
+        name: couchbase-node
+        ports:
+        - containerPort: 8091
+        - containerPort: 8092
+        - containerPort: 8093
+        - containerPort: 9100
+        - containerPort: 9101
+        - containerPort: 9102
+        - containerPort: 9103
+        - containerPort: 9104
+        - containerPort: 9105
+        - containerPort: 9998
+        - containerPort: 9999
+        - containerPort: 11207
+        - containerPort: 11209
+        - containerPort: 11210
+        - containerPort: 18091
+        - containerPort: 18092
+        - containerPort: 18093
+      restartPolicy: Always

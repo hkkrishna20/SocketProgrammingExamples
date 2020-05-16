@@ -1,0 +1,31 @@
+subprojects {
+    repositories {
+        jcenter()
+    }
+
+    apply plugin: 'java-library'
+
+    sourceCompatibility = 11
+    targetCompatibility = 11
+
+    ext.junitVersion = "5.3.1"
+
+    test {
+        useJUnitPlatform()
+    }
+
+    dependencies {
+        testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+        testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+    }
+
+    if (project.name == "com.greetings") {
+        apply plugin: "application"
+
+        mainClassName = "${project.name}/com.greetings.Main"
+
+        dependencies {
+            implementation(project(":${project.parent.name}:org.astro"))
+        }
+    }
+}

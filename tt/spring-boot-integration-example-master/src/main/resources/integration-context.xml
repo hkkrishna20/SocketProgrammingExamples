@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:int="http://www.springframework.org/schema/integration"
+       xmlns:int-ws="http://www.springframework.org/schema/integration/ws"
+       xmlns:sws="http://www.springframework.org/schema/web-services"
+       xsi:schemaLocation="http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+                           http://www.springframework.org/schema/integration/ws http://www.springframework.org/schema/integration/ws/spring-integration-ws.xsd
+                           http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/web-services http://www.springframework.org/schema/web-services/web-services-2.0.xsd">
+    
+    <int-ws:inbound-gateway id="ws-inbound-gateway" request-channel="input" marshaller="marshaller" unmarshaller="marshaller"/>
+
+    <int:service-activator input-channel="input" ref="contentStoreService"/>
+    
+    <!-- Ensures that all incoming requests will be routed to the ws-inbound-gateway -->
+    <bean class="org.springframework.ws.server.endpoint.mapping.UriEndpointMapping">
+        <property name="defaultEndpoint" ref="ws-inbound-gateway"/>
+    </bean>
+
+    <!-- a simple callback handler to configure users and passwords with an in-memory Properties object. -->
+    <bean id="callbackHandler" class="org.springframework.ws.soap.security.wss4j.callback.SimplePasswordValidationCallbackHandler">
+        <property name="users">
+            <props>
+                <prop key="Bert">Ernie</prop>
+            </props>
+        </property>
+    </bean>
+
+    <!-- Interceptors -->
+    <sws:interceptors>
+        
+        <!-- Validation -->
+        <bean id="validatingInterceptor" class="org.springframework.ws.soap.server.endpoint.interceptor.PayloadValidatingInterceptor">
+            <property name="xsdSchema" ref="contentStoreSchema"/>
+            <property name="validateRequest" value="true"/>
+            <property name="validateResponse" value="false"/>
+            <property name="addValidationErrorDetail" value="true"/>
+            <property name="errorHandler">
+                <bean class="hu.vanio.spring.boot.integration.MtomAwareValidationErrorHandler">
+                    <property name="skipElements" value="Content"/>
+                </bean>
+            </property>
+        </bean>
+        
+        <!-- WS-Security -->
+        <bean class="org.springframework.ws.soap.security.wss4j.Wss4jSecurityInterceptor">
+            <property name="validationActions" value="UsernameToken"/>
+            <property name="validationCallbackHandler" ref="callbackHandler" />
+        </bean>
+    </sws:interceptors>
+ 
+</beans>

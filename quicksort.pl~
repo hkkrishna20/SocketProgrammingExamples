@@ -1,0 +1,8 @@
+#program to perform the quick sort on the given elements
+print("ENTER THE NO OF ELEMENTS IN THE ARRAY\n");
+$n=<STDIN>;
+print("ENTER ELEMENTS IN TO THE ARRAY\n");
+for($i=0;$i<$n;$i++)
+{
+	$a[$i]=<STDIN>;
+}

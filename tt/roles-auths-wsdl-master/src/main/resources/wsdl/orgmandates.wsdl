@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:xroad="http://x-road.eu/xsd/xroad.xsd"
+                  xmlns:ns="http://x-road.eu/xsd/identifiers" xmlns:items="http://xml.vrk.fi/ws/Rova/OrgMandates/Entities"
+                  xmlns:request="http://xml.vrk.fi/ws/Rova/OrgMandates/Request"
+                  xmlns:response="http://xml.vrk.fi/ws/Rova/OrgMandates/Response"
+                  xmlns:tns="http://xml.vrk.fi/ws/Rova/OrgMandates"
+                  name="RovaOrgMandates" targetNamespace="http://xml.vrk.fi/ws/Rova/OrgMandates">
+    <wsdl:types>
+        <xsd:schema>
+            <xsd:import namespace="http://x-road.eu/xsd/xroad.xsd" schemaLocation="xroad6.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:tns="http://xml.vrk.fi/ws/Rova/OrgMandates/Entities"
+                    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                    targetNamespace="http://xml.vrk.fi/ws/Rova/OrgMandates/Entities">
+
+            <xsd:complexType name="Request">
+                <xsd:sequence>
+                    <xsd:element name="delegate" minOccurs="1" maxOccurs="1" nillable="false"  type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Mandatory. Unique identifier of representative organization.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+
+                    <xsd:element name="principal" maxOccurs="unbounded" minOccurs="1" nillable="false"  type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Mandatory. One or more identifiers for principal organizations.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="OrgMandatesType">
+                <xsd:sequence>
+                    <xsd:element name="principalId" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                ID of the principal.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="issue" maxOccurs="unbounded" minOccurs="0" nillable="true" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                List of issues.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="incomplete" maxOccurs="1" minOccurs="0" nillable="true" type="xsd:boolean">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                If present and true, list of issues might be incomplete. If some error prevents evaluating
+                                all rules related to some principal-delegate-issue -triplet, that issue is dropped and
+                                incomplete flag is raised.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="PrincipalListType">
+                <xsd:sequence>
+                    <xsd:element name="principal" maxOccurs="unbounded" minOccurs="0" nillable="false" type="tns:OrgMandatesType"/>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:complexType name="Response">
+                <xsd:sequence>
+                    <xsd:element name="principalList" type="items:PrincipalListType" nillable="true" />
+                    <xsd:element name="exceptionMessage" maxOccurs="1" minOccurs="0" nillable="true" type="xsd:string">
+                        <xsd:annotation>
+                            <xsd:documentation>
+                                Might hold more information in case of error.
+                            </xsd:documentation>
+                        </xsd:annotation>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+
+            <xsd:element name="rovaOrgMandatesService">
+                <xsd:complexType id="Request">
+                    <xsd:sequence>
+                        <xsd:element name="request" type="items:Request"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+            <xsd:element name="rovaOrgMandatesServiceResponse">
+                <xsd:complexType id="Response">
+                    <xsd:sequence>
+                        <xsd:element name="request" type="items:Request"/>
+                        <xsd:element name="response" type="items:Response"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+
+        </xsd:schema>
+    </wsdl:types>
+
+    <wsdl:message name="requestheader">
+        <wsdl:part name="client" element="xroad:client"/>
+        <wsdl:part name="service" element="xroad:service"/>
+        <wsdl:part name="userId" element="xroad:userId"/>
+        <wsdl:part name="id" element="xroad:id"/>
+        <wsdl:part name="async" element="xroad:async"/>
+    </wsdl:message>
+
+    <wsdl:message name="rovaOrgMandatesService">
+        <wsdl:part name="Request" element="items:rovaOrgMandatesService"/>
+    </wsdl:message>
+
+    <wsdl:message name="rovaOrgMandatesServiceResponse">
+        <wsdl:part name="Response" element="items:rovaOrgMandatesServiceResponse"/>
+    </wsdl:message>
+
+    <wsdl:portType name="rovaOrgMandatesPortType">
+        <wsdl:operation name="rovaOrgMandatesService">
+            <wsdl:input name="rovaOrgMandatesService" message="tns:rovaOrgMandatesService"/>
+            <wsdl:output name="rovaOrgMandatesServiceResponse" message="tns:rovaOrgMandatesServiceResponse"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="rovaOrgMandatesBinding" type="tns:rovaOrgMandatesPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="rovaOrgMandatesService">
+            <soap:operation soapAction=""/>
+            <ns:version>v1</ns:version>
+            <wsdl:input>
+                <soap:body use="literal"/>
+                <soap:header message="tns:requestheader" part="client" use="literal"/>
+                <soap:header message="tns:requestheader" part="service" use="literal"/>
+                <soap:header message="tns:requestheader" part="userId" use="literal"/>
+                <soap:header message="tns:requestheader" part="id" use="literal"/>
+                <soap:header message="tns:requestheader" part="async" use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+                <soap:header message="tns:requestheader" part="client" use="literal"/>
+                <soap:header message="tns:requestheader" part="service" use="literal"/>
+                <soap:header message="tns:requestheader" part="userId" use="literal"/>
+                <soap:header message="tns:requestheader" part="id" use="literal"/>
+                <soap:header message="tns:requestheader" part="async" use="literal"/>
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="Rova_OrgMandates_Service">
+        <wsdl:documentation>WSDL-file for RoVa Organizational roles service
+        </wsdl:documentation>
+        <wsdl:port name="rovaOrgMandatesServicePort" binding="tns:rovaOrgMandatesBinding">
+            <soap:address location="http://localhost:8000/rova/OrganizationalMandates"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>

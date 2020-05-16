@@ -1,0 +1,10 @@
+licensereport:
+  timeoutMinutes: 1
+  gitlab:
+    baseUrl: whatever
+    groups:
+      test-group:
+        privateToken: whatever
+        includedProjects:
+          test-project:
+            branch: master

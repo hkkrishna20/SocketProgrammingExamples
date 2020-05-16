@@ -1,0 +1,28 @@
+.cmp-feed__container{box-sizing:border-box;font-family:"PNC Brand",sans-serif;margin:20px auto;max-width:940px}
+.cmp-feed__heading{font-family:"PNC Brand Bold",sans-serif;font-size:18px;letter-spacing:.5px;margin-bottom:0}
+.cmp-feed__intro{color:#878787;font-size:14px;padding-bottom:12px}
+.cmp-feed__content{align-content:stretch;align-items:stretch;box-sizing:border-box;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;text-rendering:optimizeLegibility;text-size-adjust:100%}
+.odd-set::after{content:"";display:block;flex:auto;max-width:33%;width:100%}
+.cmp-feed__article{box-sizing:border-box;display:block;flex-basis:31%;padding-bottom:15px;text-rendering:optimizeLegibility;text-size-adjust:100%}
+.cmp-feed__thumbnail{position:relative}
+.cmp-feed__image{margin-bottom:10px;display:flex;width:100%;height:100%;background-position:top;background-size:cover;min-height:133px}
+.cmp-feed__topic{color:#f58025;font-size:12px;font-style:italic;font-weight:bold;line-height:20px;margin-bottom:4px;margin-top:12px}
+.cmp-feed__title{font-size:20px;line-height:1.15em;margin-bottom:10px;margin-top:0}
+.cmp-feed__title a{color:#484848;transition:all 250ms linear}
+.cmp-feed__title a:hover{color:#f58025;text-decoration:none}
+.cmp-feed__summary{color:#878787;font-size:14px;margin-bottom:10px;margin-right:20px}
+.cmp-feed__readtime{color:#878787;font-family:"PNC Brand Medium",sans-serif;font-size:12px}
+.small-vid-play::after{width:40px;height:40px;display:block;content:"";background:transparent url(../../../../content/dam/pnc-thought-leadership/images/play-btn.png) center center no-repeat;background-size:40px 40px;left:50%;top:50%;transform:translate(-50%,-50%);position:absolute}
+@media only screen and (min-width:1000px){.cmp-feed__heading{font-size:20px}
+.cmp-feed__intro{font-size:16px}
+.cmp-feed__title{padding-right:10px}
+.small-vid-play::after{width:74px;height:74px;background-size:74px 74px}
+}
+@media only screen and (max-width:979px) and (min-width:600px){.cmp-feed__container{max-width:600px}
+.cmp-feed__image{min-height:85px}
+}
+@media only screen and (max-width:599px) and (min-width:0){.cmp-feed__container{padding:0 10px}
+.cmp-feed__article{flex-basis:98%}
+.cmp-feed__topic,.cmp-feed__title,.cmp-feed__summary,.cmp-feed__readtime{padding-left:10px}
+.cmp-feed__image{min-height:200px}
+}

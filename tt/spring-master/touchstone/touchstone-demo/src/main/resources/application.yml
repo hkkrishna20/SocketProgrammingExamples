@@ -1,0 +1,6 @@
+spring.application.name: touchstone-demo
+logging.level:
+  org.springframework: WARN
+  org.javacode.touchstone: INFO
+  org.hibernate: WARN
+  com.zaxxer: WARN

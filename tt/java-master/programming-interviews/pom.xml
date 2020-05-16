@@ -1,0 +1,96 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>name.javacode.codinginterview</groupId>
+	<artifactId>programming-interviews</artifactId>
+	<version>1e</version>
+	<name>programming-interviews</name>
+	<description>Practice code from "Elements of Programming Interviews", 1e, ISBN 1479274836</description>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<commons.lang3.version>3.7</commons.lang3.version>
+		<handlebars.spring.boot.starter.version>0.3.1</handlebars.spring.boot.starter.version>
+		<handlebars.helpers.version>4.1.0</handlebars.helpers.version>
+		<junit.version>4.12</junit.version>
+		<logback.version>1.2.3</logback.version>
+		<lombok.version>1.16.18</lombok.version>
+		<mockito.version>2.20.1</mockito.version>
+		<modelmapper.version>2.1.0</modelmapper.version>
+		<clover.version>4.2.1</clover.version>
+		<poi.version>4.1.2</poi.version>
+
+		<project.build.sourceLevel>1.8</project.build.sourceLevel>
+		<project.build.targetLevel>1.8</project.build.targetLevel>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<junit.version>4.12</junit.version>
+		<slf4j.version>1.7.10</slf4j.version>
+		<logback.version>1.1.2</logback.version>
+		<jmockit.version>1.14</jmockit.version>
+		<project.build.sourceLevel>1.8</project.build.sourceLevel>
+		<project.build.targetLevel>1.8</project.build.targetLevel>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<wildfly.plugin.version>1.0.2.Final</wildfly.plugin.version>
+		<war.plugin.version>2.6</war.plugin.version>
+		<compiler.plugin.version>3.2</compiler.plugin.version>
+		<wildfly.version>8.2.0.Final</wildfly.version>
+		<wildfly.unpackDir>${java.io.tmpdir}</wildfly.unpackDir>
+		<wildfly.home>${wildfly.unpackDir}/wildfly-${wildfly.version}</wildfly.home>
+		<arquillan.version>1.1.7.Final</arquillan.version>
+	</properties>
+
+	<dependencies>
+		<!-- JMockit must be before JUnit in the classpath -->
+		<dependency>
+			<groupId>org.jmockit</groupId>
+			<artifactId>jmockit</artifactId>
+			<version>${jmockit.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<type>jar</type>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>${logback.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>
+			<version>${logback.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>name.javacode.algorithms</groupId>
+			<artifactId>algorithms-core</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-collections4</artifactId>
+			<version>4.0</version>
+		</dependency>
+
+	</dependencies>
+</project>

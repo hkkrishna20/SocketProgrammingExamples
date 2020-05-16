@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: couchbase
+  labels:
+    app: couchbase
+spec:
+  clusterIP: None
+  ports:
+  - name: couchbase
+    port: 8091
+  - name: views
+    port: 8092
+  - name: queries
+    port: 8093
+  - name: int-idx-admin
+    port: 9100
+  - name: int-idx-scan
+    port: 9101
+  - name: int-idx-http
+    port: 9102
+  - name: int-idx-bld1
+    port: 9103
+  - name: int-idx-bld2
+    port: 9104
+  - name: int-idx-maint
+    port: 9105
+  - name: int-admin
+    port: 9998
+  - name: int-gsi
+    port: 9999
+  - name: smart-client1
+    port: 11207
+  - name: int-bucket
+    port: 11209
+  - name: smart-client2
+    port: 11210
+  - name: ssl-admin
+    port: 18091
+  - name: ssl-views
+    port: 18092
+  - name: ssl-queries
+    port: 18093
+  selector:
+    app: couchbase-node
+  type: ClusterIP

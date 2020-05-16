@@ -1,0 +1,2557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<link
+	href="https://raw.githubusercontent.com/twbs/bootstrap/master/docs/assets/css/ie10-viewport-bug-workaround.css"
+	rel="stylesheet">
+
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script
+	src="https://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+<!-- jQuery library -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+<!-- Popper JS -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type="text/javascript"
+	src="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.js"></script>
+
+<script
+	src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+<script
+	src="https://cdn.datatables.net/responsive/2.2.2/js/dataTables.responsive.min.js"></script>
+<script
+	src="https://cdn.datatables.net/responsive/2.2.2/js/responsive.bootstrap4.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script
+	src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
+<script
+	src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<script
+	src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
+<script
+	src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
+<link
+	href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" />
+<link
+	href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.bootstrap4.min.css" />
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.bootstrap4.min.css" />
+<link
+	href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=latin-ext"
+	rel="stylesheet" />
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+	rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" />
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" />
+
+<link rel="stylesheet" type="text/css"
+	href="https://cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.css" />
+
+
+<title>Metadata Table</title>
+<style>
+@import
+	url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i')
+	;
+
+html, body {
+	margin: 0px;
+	padding: 0px;
+	max-height: 100%;
+	height: 100%;
+}
+
+
+
+body {
+	background-image: linear-gradient(to right, #ff8177 0%, #ff867a 0%, #ff8c7f 21%, #f99185
+		52%, #cf556c 78%, #b12a5b 100%);
+	font: 16px Arial;
+}
+
+.autocomplete {
+	/*the container must be positioned relative:*/
+	position: relative;
+	display: inline-block;
+}
+
+.custom-select {
+	position: relative;
+	font-family: Arial;
+}
+
+.custom-select select {
+	display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+	background-color: DodgerBlue;
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {
+	position: absolute;
+	content: "";
+	top: 14px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border: 6px solid transparent;
+	border-color: #fff transparent transparent transparent;
+}
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+	border-color: transparent transparent #fff transparent;
+	top: 7px;
+}
+.pagination>li>a, .pagination>li>span {
+	background: #00a1ff !important;
+	border: 0px !important;
+	border-radius: 0px !important;
+	color: #FFF !important;
+	font-weight: 500 !important;
+	font-size: 13px !important;
+	font-family: 'Roboto', sans-serif;
+	-webkit-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.18);
+	-moz-box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.18);
+	box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.18);
+}
+
+.alert-group
+>
+.alert
+
+
+
+
+:first-child
+
+
+
+
+:not
+
+
+ 
+
+
+(
+:last-child
+
+
+ 
+
+
+){
+-webkit-border-top-left-radius
+
+
+
+
+:
+
+
+ 
+
+
+5
+px
+
+
+
+
+;
+-webkit-border-top-right-radius
+
+
+
+
+:
+
+
+ 
+
+
+5
+px
+
+
+
+
+;
+-webkit-border-bottom-right-radius
+
+
+
+
+:
+
+
+ 
+
+
+0;
+-webkit-border-bottom-left-radius
+
+
+
+
+:
+
+
+ 
+
+
+0;
+-moz-border-radius-topleft
+
+
+
+
+:
+
+
+ 
+
+
+5
+px
+
+
+
+
+;
+-moz-border-radius-topright
+
+
+
+
+:
+
+
+ 
+
+
+5
+px
+
+
+
+
+;
+-moz-border-radius-bottomright
+
+
+
+
+:
+
+
+ 
+
+
+0;
+-moz-border-radius-bottomleft
+
+
+
+
+:
+
+
+ 
+
+
+0;
+border-top-left-radius
+
+
+
+
+:
+
+
+ 
+
+
+5
+px
+
+
+
+
+;
+border-top-right-radius
+
+
+
+
+:
+
+
+ 
+
+
+5
+px
+
+
+
+
+;
+border-bottom-right-radius
+
+
+
+
+:
+
+
+ 
+
+
+0;
+border-bottom-left-radius
+
+
+
+
+:
+
+
+ 
+
+
+0;
+margin-bottom
+
+
+
+
+:
+
+
+ 
+
+
+0
+}
+.alert-group
+>
+.alert
+
+
+
+
+:not
+
+
+ 
+
+
+(
+:first-child
+
+
+ 
+
+
+)
+:not
+
+
+ 
+
+
+(
+:last-child
+
+
+ 
+
+
+){
+-webkit-border-radius
+
+
+
+
+:
+
+
+ 
+
+
+0;
+-moz-border-radius
+
+
+
+
+:
+
+
+ 
+
+
+0;
+border-radius
+
+
+
+
+:
+
+
+ 
+
+
+0;
+border-top
+
+
+
+
+:
+
+
+ 
+
+
+0;
+margin-bottom
+
+
+
+
+:
+
+
+ 
+
+
+0
+}
+.alert-group
+>
+.alert
+
+
+
+
+:last-child
+
+
+
+
+:not
+
+
+ 
+
+
+(
+:first-child
+
+
+ 
+
+
+){
+-webkit-border-top-left-radius
+
+
+
+
+:
+
+
+ 
+
+
+0;
+-webkit-border-top-right-radius
+
+
+
+
+:
+
+
+ 
+
+
+0;
+-webkit-border-bottom-right-radius
+
+
+
+
+:
+
+
+ 
+
+
+5
+px
+
+
+
+
+;
+-webkit-border-bottom-left-radius
+
+
+
+
+:
+
+
+ 
+
+
+5
+px
+
+
+
+
+;
+-moz-border-radius-topleft
+
+
+
+
+:
+
+
+ 
+
+
+0;
+-moz-border-radius-topright
+
+
+
+
+:
+
+
+ 
+
+
+0;
+-moz-border-radius-bottomright
+
+
+
+
+:
+
+
+ 
+
+
+5
+px
+
+
+
+
+;
+-moz-border-radius-bottomleft
+
+
+
+
+:
+
+
+ 
+
+
+5
+px
+
+
+
+
+;
+border-top-left-radius
+
+
+
+
+:
+
+
+ 
+
+
+0;
+border-top-right-radius
+
+
+
+
+:
+
+
+ 
+
+
+0;
+border-bottom-right-radius
+
+
+
+
+:
+
+
+ 
+
+
+5
+px
+
+
+
+
+;
+border-bottom-left-radius
+
+
+
+
+:
+
+
+ 
+
+
+5
+px
+
+
+
+
+;
+border-top
+
+
+
+
+:
+
+
+ 
+
+
+0
+}
+.table-striped>tbody>tr:nth-of-type(odd) {
+	background-color: #00a1ff !important;
+	color: #FFF !important;
+	font-size: 13px !important;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500 !important;
+}
+
+tr.even {
+	background: #bfbfbf !important;
+	color: #000 !important;
+	font-size: 13px !important;
+	font-weight: 500 !important;
+	font-family: 'Roboto', sans-serif;
+}
+
+th.sorting, .sorting_asc {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500 !important;
+	border: 1px solid #FFF !important;
+	color: #FFF;
+	border: 1px solid #93CE37;
+	border-bottom: 3px solid #9ED929;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#30b3ff+0,00a1ff+100 */
+	background: rgb(48, 179, 255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(48, 179, 255, 1) 0%,
+		rgba(0, 161, 255, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(48, 179, 255, 1) 0%,
+		rgba(0, 161, 255, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(48, 179, 255, 1) 0%,
+		rgba(0, 161, 255, 1) 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#30b3ff',
+		endColorstr='#00a1ff', GradientType=0); /* IE6-9 */
+	-webkit-border-top-left-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-moz-border-radius: 5px 5px 0px 0px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+table#table {
+	border: 0px !important;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div, .select-selected {
+	color: #ffffff;
+	padding: 8px 16px;
+	border: 1px solid transparent;
+	border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+	cursor: pointer;
+}
+/*style items (options):*/
+.select-items {
+	position: absolute;
+	background-color: DodgerBlue;
+	top: 100%;
+	left: 0;
+	right: 0;
+	z-index: 99;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+	display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.autocomplete {
+	/*the container must be positioned relative:*/
+	position: relative;
+	display: inline-block;
+}
+
+input {
+	border: 1px solid transparent;
+	background-color: #f1f1f1;
+	padding: 10px;
+	font-size: 16px;
+}
+
+input[type=text] {
+	background-color: #f1f1f1;
+	width: 100%;
+}
+
+input[type=submit] {
+	background-color: DodgerBlue;
+	color: #fff;
+	cursor: pointer;
+}
+
+.autocomplete-items {
+	position: absolute;
+	border: 1px solid #d4d4d4;
+	border-bottom: none;
+	border-top: none;
+	z-index: 99;
+	/*position the autocomplete items to be the same width as the container:*/
+	top: 100%;
+	left: 0;
+	right: 0;
+}
+
+.autocomplete-items div {
+	padding: 10px;
+	cursor: pointer;
+	background-color: #fff;
+	border-bottom: 1px solid #d4d4d4;
+}
+
+.autocomplete-items div:hover {
+	/*when hovering an item:*/
+	background-color: #e9e9e9;
+}
+
+.autocomplete-active {
+	/*when navigating through the items using the arrow keys:*/
+	background-color: DodgerBlue !important;
+	color: #ffffff;
+}
+div.background {
+	border: 1px solid white;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+	margin: auto;
+	padding-top: 2%;
+	padding-left: 2%;
+}
+
+.navbar, .dropdown-menu {
+	background-color: #CC3333;
+	/* background: rgba(255, 255, 255, 0.25); */
+	border: none;
+}
+
+.nav>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover,
+	.dropdown-menu>li>a, .dropdown-menu>li {
+	border-bottom: 3px solid transparent;
+}
+
+.nav>li>a:focus, .nav>li>a:hover, .nav .open>a, .nav .open>a:focus, .nav .open>a:hover,
+	.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+	border-bottom: 3px solid transparent;
+	background: none;
+}
+
+.navbar a, .dropdown-menu>li>a, .dropdown-menu>li>a:focus,
+	.dropdown-menu>li>a:hover, .navbar-toggle {
+	color: #fff;
+}
+
+.dropdown-menu {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.nav li:hover:nth-child(8n+1), .nav li.active:nth-child(8n+1) {
+	border-bottom: #C4E17F 3px solid;
+}
+
+.nav li:hover:nth-child(8n+2), .nav li.active:nth-child(8n+2) {
+	border-bottom: #F7FDCA 3px solid;
+}
+
+.nav li:hover:nth-child(8n+3), .nav li.active:nth-child(8n+3) {
+	border-bottom: #FECF71 3px solid;
+}
+
+.nav li:hover:nth-child(8n+4), .nav li.active:nth-child(8n+4) {
+	border-bottom: #F0776C 3px solid;
+}
+
+.nav li:hover:nth-child(8n+5), .nav li.active:nth-child(8n+5) {
+	border-bottom: #DB9DBE 3px solid;
+}
+
+.nav li:hover:nth-child(8n+6), .nav li.active:nth-child(8n+6) {
+	border-bottom: #C49CDE 3px solid;
+}
+
+.nav li:hover:nth-child(8n+7), .nav li.active:nth-child(8n+7) {
+	border-bottom: #669AE1 3px solid;
+}
+
+.nav li:hover:nth-child(8n+8), .nav li.active:nth-child(8n+8) {
+	border-bottom: #62C2E4 3px solid;
+}
+
+.navbar-toggle .icon-bar {
+	color: #fff;
+	background: #fff;
+}
+/* TOP HEADER
+-------------------------------------------------- */
+.navbar.top-bar {
+	border-radius: 0;
+	padding: 16px 0;
+	z-index: 16;
+	background-color: #CC3333;
+}
+
+.navbar-toggler {
+	border: 1px solid #fff;
+	color: #eee;
+	position: absolute;
+	right: 21px;
+}
+
+.sps {
+	padding: 1em .5em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transition: all 0.25s ease;
+	width: 100%;
+}
+
+.sps--abv {
+	background-color: transparent;
+	color: #000;
+}
+
+.sps--blw {
+	background-color: #fff;
+	color: #fff;
+}
+
+.top-bar a.navbar-brand {
+	color: #fff;
+	font-size: 26px;
+	font-weight: 800;
+	padding: 5px 0 0 10px;
+	text-transform: uppercase;
+}
+
+.sps--blw.top-bar a.navbar-brand {
+	color: #000;
+}
+
+.top-bar a.navbar-brand span {
+	color: #0297ff;
+}
+
+.top-bar .nav-link {
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	padding: 12px 18px !important;
+}
+
+.sps--blw.top-bar .nav-link {
+	color: #000
+}
+
+.top-bar .navbar-nav .nav-item {
+	margin: 0
+}
+
+.top-bar .nav-link:hover, .top-bar .nav-item.active a {
+	color: #fff;
+	border-bottom: 2px solid #fff;
+	border-radius: 0;
+}
+
+.sps--blw.top-bar .nav-link:hover, .sps--blw.top-bar .nav-item.active a
+	{
+	color: #0297ff;
+	border-bottom: none;
+	border-radius: 0;
+}
+
+#footer {
+	background-color: #696969;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+}
+
+#footer h5 {
+	padding-left: 10px;
+	border-left: 3px solid #eeeeee;
+	padding-bottom: 6px;
+	margin-bottom: 20px;
+	color: #ffffff;
+}
+
+#footer a {
+	color: #ffffff;
+	text-decoration: none !important;
+	background-color: transparent;
+	-webkit-text-decoration-skip: objects;
+}
+
+#footer ul.social li {
+	padding: 3px 0;
+}
+
+#footer ul.social li a i {
+	margin-right: 5px;
+	font-size: 25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+
+#footer ul.social li:hover a i {
+	font-size: 30px;
+	margin-top: -10px;
+}
+
+#footer ul.social li a, #footer ul.quick-links li a {
+	color: #ffffff;
+}
+
+#footer ul.social li a:hover {
+	color: #eeeeee;
+}
+
+#footer ul.quick-links li {
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+
+#footer ul.quick-links li:hover {
+	padding: 3px 0;
+	margin-left: 5px;
+	font-weight: 700;
+}
+
+#footer ul.quick-links li a i {
+	margin-right: 5px;
+}
+
+#footer ul.quick-links li:hover a i {
+	font-weight: 700;
+}
+
+@media ( max-width :767px) {
+	#footer h5 {
+		padding-left: 0;
+		border-left: transparent;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+	}
+}
+</style>
+<script>
+	/*------- Smooth Scroll -------*/
+
+	$('a[href^="#"]').on('click', function(event) {
+
+		var target = $($(this).attr('href'));
+
+		if (target.length) {
+			event.preventDefault();
+			$('html, body').animate({
+				scrollTop : target.offset().top
+			}, 1000);
+		}
+
+	});
+
+	var ScrollPosStyler = (function(document, window) {
+		"use strict";
+
+		/* ====================
+		 * private variables
+		 * ==================== */
+		var scrollPosY = 0, busy = false, onTop = true,
+
+		// toggle style / class when scrolling below this position (in px)
+		scrollOffsetY = 1,
+
+		// choose elements to apply style / class to
+		elements = document.getElementsByClassName("sps");
+
+		/* ====================
+		 * private funcion to check scroll position
+		 * ==================== */
+		function onScroll() {
+			// ensure that events don't stack
+			if (!busy) {
+				// get current scroll position from window
+				scrollPosY = window.pageYOffset;
+
+				// if we were above, and are now below scroll position...
+				if (onTop && scrollPosY > scrollOffsetY) {
+					// suspend accepting scroll events
+					busy = true;
+
+					// remember that we are below scroll position
+					onTop = false;
+
+					// asynchronuously add style / class to elements
+					window.requestAnimationFrame(belowScrollPos);
+
+					// if we were below, and are now above scroll position...
+				} else if (!onTop && scrollPosY <= scrollOffsetY) {
+					// suspend accepting scroll events
+					busy = true;
+
+					// remember that we are above scroll position
+					onTop = true;
+
+					// asynchronuously add style / class to elements
+					window.requestAnimationFrame(aboveScrollPos);
+				}
+			}
+		}
+
+		/* ====================
+		 * private function to style elements when above scroll position
+		 * ==================== */
+		function aboveScrollPos() {
+			// iterate over elements
+			// for (var elem of elements) {
+			for (var i = 0; elements[i]; ++i) { // chrome workaround
+				// add style / class to element
+				elements[i].classList.add("sps--abv");
+				elements[i].classList.remove("sps--blw");
+			}
+
+			// resume accepting scroll events
+			busy = false;
+		}
+
+		/* ====================
+		 * private function to style elements when below scroll position
+		 * ==================== */
+		function belowScrollPos() {
+			// iterate over elements
+			// for (var elem of elements) {
+			for (var i = 0; elements[i]; ++i) { // chrome workaround
+				// add style / class to element
+				elements[i].classList.add("sps--blw");
+				elements[i].classList.remove("sps--abv");
+			}
+
+			// resume accepting scroll events
+			busy = false;
+		}
+
+		/* ====================
+		 * public function to initially style elements based on scroll position
+		 * ==================== */
+		var pub = {
+			init : function() {
+				// suspend accepting scroll events
+				busy = true;
+
+				// get current scroll position from window
+				scrollPosY = window.pageYOffset;
+
+				// if we are below scroll position...
+				if (scrollPosY > scrollOffsetY) {
+					// remember that we are below scroll position
+					onTop = false;
+
+					// asynchronuously add style / class to elements
+					window.requestAnimationFrame(belowScrollPos);
+
+					// if we are above scroll position...
+				} else { // (scrollPosY <= scrollOffsetY)
+					// remember that we are above scroll position
+					onTop = true;
+
+					// asynchronuously add style / class to elements
+					window.requestAnimationFrame(aboveScrollPos);
+				}
+			}
+		};
+
+		/* ====================
+		 * main initialization
+		 * ==================== */
+		// add initial style / class to elements when DOM is ready
+		document.addEventListener("DOMContentLoaded", function() {
+			// defer initialization to allow browser to restore scroll position
+			window.setTimeout(pub.init, 1);
+		});
+
+		// register for window scroll events
+		window.addEventListener("scroll", onScroll);
+
+		return pub;
+	})(document, window);
+	$(document).ready(function() {
+		$("#myInputIdButton").click(function() {
+			$("#searchCazymes-form").submit(); // Form submission.
+		});
+	});
+	function autocomplete(inp, arr) {
+		/*the autocomplete function takes two arguments,
+		the text field element and an array of possible autocompleted values:*/
+		var currentFocus;
+		/*execute a function when someone writes in the text field:*/
+		inp
+				.addEventListener(
+						"input",
+						function(e) {
+							var a, b, i, val = this.value;
+							/*close any already open lists of autocompleted values*/
+							closeAllLists();
+							if (!val) {
+								return false;
+							}
+							currentFocus = -1;
+							/*create a DIV element that will contain the items (values):*/
+							a = document.createElement("DIV");
+							a.setAttribute("id", this.id + "autocomplete-list");
+							a.setAttribute("class", "autocomplete-items");
+							/*append the DIV element as a child of the autocomplete container:*/
+							this.parentNode.appendChild(a);
+							/*for each item in the array...*/
+							for (i = 0; i < arr.length; i++) {
+								/*check if the item starts with the same letters as the text field value:*/
+								if (arr[i].substr(0, val.length).toUpperCase() == val
+										.toUpperCase()) {
+									/*create a DIV element for each matching element:*/
+									b = document.createElement("DIV");
+									/*make the matching letters bold:*/
+									b.innerHTML = "<strong>"
+											+ arr[i].substr(0, val.length)
+											+ "</strong>";
+									b.innerHTML += arr[i].substr(val.length);
+									/*insert a input field that will hold the current array item's value:*/
+									b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+									/*execute a function when someone clicks on the item value (DIV element):*/
+									b
+											.addEventListener(
+													"click",
+													function(e) {
+														/*insert the value for the autocomplete text field:*/
+														inp.value = this
+																.getElementsByTagName("input")[0].value;
+														/*close the list of autocompleted values,
+														(or any other open lists of autocompleted values:*/
+														closeAllLists();
+													});
+									a.appendChild(b);
+								}
+							}
+						});
+		/*execute a function presses a key on the keyboard:*/
+		inp.addEventListener("keydown", function(e) {
+			var x = document.getElementById(this.id + "autocomplete-list");
+			if (x)
+				x = x.getElementsByTagName("div");
+			if (e.keyCode == 40) {
+				/*If the arrow DOWN key is pressed,
+				increase the currentFocus variable:*/
+				currentFocus++;
+				/*and and make the current item more visible:*/
+				addActive(x);
+			} else if (e.keyCode == 38) { //up
+				/*If the arrow UP key is pressed,
+				decrease the currentFocus variable:*/
+				currentFocus--;
+				/*and and make the current item more visible:*/
+				addActive(x);
+			} else if (e.keyCode == 13) {
+				/*If the ENTER key is pressed, prevent the form from being submitted,*/
+				e.preventDefault();
+				if (currentFocus > -1) {
+					/*and simulate a click on the "active" item:*/
+					if (x)
+						x[currentFocus].click();
+				}
+			}
+		});
+		function addActive(x) {
+			/*a function to classify an item as "active":*/
+			if (!x)
+				return false;
+			/*start by removing the "active" class on all items:*/
+			removeActive(x);
+			if (currentFocus >= x.length)
+				currentFocus = 0;
+			if (currentFocus < 0)
+				currentFocus = (x.length - 1);
+			/*add class "autocomplete-active":*/
+			x[currentFocus].classList.add("autocomplete-active");
+		}
+		function removeActive(x) {
+			/*a function to remove the "active" class from all autocomplete items:*/
+			for (var i = 0; i < x.length; i++) {
+				x[i].classList.remove("autocomplete-active");
+			}
+		}
+		function closeAllLists(elmnt) {
+			/*close all autocomplete lists in the document,
+			except the one passed as an argument:*/
+			var x = document.getElementsByClassName("autocomplete-items");
+			for (var i = 0; i < x.length; i++) {
+				if (elmnt != x[i] && elmnt != inp) {
+					x[i].parentNode.removeChild(x[i]);
+				}
+			}
+		}
+		/*execute a function when someone clicks in the document:*/
+		document.addEventListener("click", function(e) {
+			closeAllLists(e.target);
+		});
+	}
+
+	/*An array containing all the genomeNames names :*/
+	var genomeNames = [ "Aaosphaeria arxii CBS 175.79 v1.0",
+			"Abortiporus biennis CCBS 521 v1.0",
+			"Abortiporus biennis CIRM-BRFM1778 v1.0",
+			"Absidia padenii NRRL 2977 v1.0", "Absidia repens NRRL 1336 v1.0",
+			"Acaromyces ingoldii MCA 4198 v1.0",
+			"Acephala macrosclerotiorum EW76-UTF0540 v1.0",
+			"Achaetomium strumarium CBS333.67 v1.0",
+			"Acidomyces richmondensis BFW", "Acidomyces richmondensis BFW",
+			"Acidothrix acidophila CBS 136259 v1.0",
+			"Acremonium alcalophilum v2.0",
+			"Acremonium chrysogenum ATCC 11550",
+			"Acremonium strictum DS1bioAY4a v1.0",
+			"Agaricostilbum hyphaenes ATCC MYA-4628 v1.0",
+			"Agaricus bisporus var bisporus (H97) v2.0",
+			"Agaricus bisporus var. burnettii JB137-S8",
+			"Agrocybe pediades AH 40210 v1.0",
+			"Aliquandostipite khaoyaiensis CBS 118232 v1.0",
+			"Allomyces macrogynus ATCC 38327",
+			"Alternaria alternata 133aPRJ v1.0",
+			"Alternaria alternata SRC1lrK2f v1.0", "Alternaria brassicicola",
+			"Alternaria rosae DTO 242-I4 v1.0", "Amanita muscaria Koide v1.0",
+			"Amanita thiersii Skay4041 v1.0",
+			"Amniculicola lignicola CBS 123094 v1.0",
+			"Amorphotheca resinae v1.0",
+			"Ampelomyces quisqualis HMLAC05119 v1.0",
+			"Amylocystis lapponica SKaAmylap13 v1.0",
+			"Amylostereum chailletii DWAch2 v1.0", "Anaeromyces robustus v1.0",
+			"Anomoporia bombycina ATCC 64506 v1.0",
+			"Anthostoma avocetta NRRL 3190 v1.0",
+			"Antonospora locustae HM-2013",
+			"Antrodia serialis Sig1Antser10 v1.0", "Antrodia sinuosa LB1 v1.0",
+			"Apiosordaria backusii CBS 540.89 v1.0",
+			"Apiospora montagnei NRRL 25634 v1.0",
+			"Aplosporella prunicola CBS 121.167 v1.0",
+			"Apodospora peruviana CBS 118394 v1.0", "Aporpium caryae L-13461",
+			"Armillaria cepistipes B5", "Armillaria gallica 21-2 v1.0",
+			"Armillaria mellea DSM 3731", "Armillaria ostoyae C18/9",
+			"Armillaria solidipes 28-4 v1.0",
+			"Arthroascus fermentans 17710 v1.0",
+			"Arthrobotrys oligospora ATCC 24927",
+			"Arthroderma benhamiae CBS 112371",
+			"Artolenzites elegans CIRM-BRFM 1122 v1.0",
+			"Artolenzites elegans CIRM-BRFM 1663 v1.0",
+			"Ascobolus immersus RN42 v1.0", "Ascochyta rabiei ArDII",
+			"Ascocoryne sarcoides NRRL50072",
+			"Ascodesmis nigricans CBS 389.68 v1.0",
+			"Ascoidea rubescens NRRL Y17699 v1.0",
+			"Aspergillus acristatulus CBS 119.55 v1.0",
+			"Aspergillus aculeatinus CBS 121060 v1.0",
+			"Aspergillus aculeatus ATCC16872 v1.1",
+			"Aspergillus amylovorus CBS 600.67 v1.0",
+			"Aspergillus bisporus CBS 707.71 v1.0",
+			"Aspergillus bombycis NRRL 26010", "Aspergillus brasiliensis v1.0",
+			"Aspergillus brevijanus CBS 111.46 v1.0",
+			"Aspergillus brunneoviolaceus CBS 621.78 v1.0",
+			"Aspergillus calidoustus", "Aspergillus campestris IBT 28561 v1.0",
+			"Aspergillus candidus CBS 102.13 v1.0",
+			"Aspergillus carbonarius ITEM 5010 v3",
+			"Aspergillus chevalieri CBS 522.65 v1.0",
+			"Aspergillus clavatus NRRL 1 from AspGD",
+			"Aspergillus costaricaensis CBS 115574 v1.0",
+			"Aspergillus cristatus GZAAS20.1005",
+			"Aspergillus desertorum CBS 653.73 v1.0",
+			"Aspergillus ellipticus CBS 707.79 v1.0",
+			"Aspergillus eucalypticola CBS 122712 v1.0",
+			"Aspergillus fijiensis CBS 313.89 v1.0",
+			"Aspergillus filifera CBS 114510 v1.0",
+			"Aspergillus flavus NRRL3357", "Aspergillus fumigatus A1163",
+			"Aspergillus fumigatus Af293 from AspGD",
+			"Aspergillus funiculosus CBS 116.56 v1.0",
+			"Aspergillus glaucus v1.0",
+			"Aspergillus heteromorphus CBS 117.55 v1.0",
+			"Aspergillus homomorphus CBS 101889 v1.0",
+			"Aspergillus ibericus CBS 121593 v1.0", "Aspergillus indicus v2.0",
+			"Aspergillus indologenus CBS 114.80 v1.0",
+			"Aspergillus insolitus CBS 384.61 v1.0",
+			"Aspergillus japonicus CBS 114.51 v1.0",
+			"Aspergillus kawachii IFO 4308",
+			"Aspergillus lacticoffeatus CBS 101883 v1.0",
+			"Aspergillus luchuensis CBS 106.47 v1.0",
+			"Aspergillus multicolor v1.0",
+			"Aspergillus neoauricomus CBS112787 v1.0",
+			"Aspergillus neoechinulatus CBS120.55 v1.0",
+			"Aspergillus neoniger CBS 115656 v1.0", "Aspergillus nidulans",
+			"Aspergillus niger ATCC 1015 v4.0", "Aspergillus niger CBS 513.88",
+			"Aspergillus niger NRRL3",
+			"Aspergillus niger van Tieghem ATCC 13496 v1.0",
+			"Aspergillus nomius NRRL 13137",
+			"Aspergillus novofumigatus IBT 16806 v1.0",
+			"Aspergillus ochraceoroseus IBT 24754 v1.0",
+			"Aspergillus ochraceoroseus SRRC1432",
+			"Aspergillus olivicola v1.0", "Aspergillus oryzae RIB40",
+			"Aspergillus parvulus CBS 136.61 v1.0",
+			"Aspergillus penicilloides CBS 540.65 v1.0",
+			"Aspergillus phoenicis (Corda) Thom ATCC 13157 v1.0",
+			"Aspergillus piperis CBS 112811 v1.0",
+			"Aspergillus rambellii SRRC1468", "Aspergillus recurvatus v1.0",
+			"Aspergillus restrictus CBS 118.33 v1.0",
+			"Aspergillus robustus CBS 428.77 v1.0",
+			"Aspergillus roseoglobulosus CBS112800 v1.0",
+			"Aspergillus saccharolyticus JOP 1030-1 v1.0",
+			"Aspergillus sclerotiicarbonarius CBS 121057 v1.0",
+			"Aspergillus sclerotioniger CBS115572 v1.0",
+			"Aspergillus sclerotiorum CBS 549.65 v1.0",
+			"Aspergillus stella-maris CBS 113639 v1.0",
+			"Aspergillus stercoraria CBS 428.93 v1.0",
+			"Aspergillus steynii IBT 23096 v1.0",
+			"Aspergillus sydowii CBS 593.65 v1.0",
+			"Aspergillus taichungensis IBT 19404 v1.0",
+			"Aspergillus terreus NIH 2624",
+			"Aspergillus triticus CBS266.81 v1.0",
+			"Aspergillus tubingensis v1.0", "Aspergillus udagawae IFM 46973",
+			"Aspergillus undulatus CBS 261.88 v1.0",
+			"Aspergillus unguis CBS132.55 v1.0",
+			"Aspergillus uvarum CBS 121591 v1.0",
+			"Aspergillus vadensis CBS 113365 v1.0",
+			"Aspergillus venezuelensis CBS 868.97 v1.0",
+			"Aspergillus versicolor v1.0",
+			"Aspergillus violaceofuscus CBS 115571 v1.0",
+			"Aspergillus welwitschiae CBS139.54b v1.0",
+			"Aspergillus wentii v1.0", "Aspergillus zonatus v1.0",
+			"Atractiellales rhizophila v2.0", "Aulographum hederae v2.0",
+			"Aureobasidium pullulans var. melanogenum CBS 110374",
+			"Aureobasidium pullulans var. namibiae CBS 147.97",
+			"Aureobasidium pullulans var. pullulans EXF-150",
+			"Aureobasidium pullulans var. subglaciale EXF-2481",
+			"Auricularia subglabra v2.0", "Auriculariopsis ampla NL-1724 v1.0",
+			"Auriscalpium vulgare FP105234-Sp v1.0",
+			"Babjeviella inositovora NRRL Y-12698 v1.0",
+			"Backusella circina FSU 941 v1.0", "Basidioascus undulatus",
+			"Basidiobolus meristosporus CBS 931.73 v1.0",
+			"Batrachochytrium dendrobatidis JAM81 v1.0",
+			"Baudoinia compniacensis UAMH 10762 (4089826) v1.0",
+			"Beauveria bassiana ARSEF 2860",
+			"Bimuria novae-zelandiae CBS 107.79 v1.0",
+			"Biscogniauxia nummularia v1.0", "Bisporella sp. PMI_857 v1.0",
+			"Bjerkandera adusta v1.0", "Blakeslea trispora NRRL 2456 v1.0",
+			"Blastobotrys (Arxula) adeninivorans",
+			"Blastocladiella britannica v1.0",
+			"Blastomyces dermatitidis SLH14081",
+			"Blumeria graminis f. sp. hordei DH14",
+			"Blumeria graminis f. sp. hordei Race1",
+			"Blumeria graminis f. sp. tritici 96224",
+			"Blyttiomyces helicus single-cell v1.0",
+			"Boeremia exigua ZJUB106 v1.0",
+			"Bolbitius vitellinus SZMC-NL-1974 v1.0", "Boletus edulis v1.0",
+			"Bombardia bombarda SMH3391-2 v1.0",
+			"Botryobasidium botryosum v1.0", "Botryosphaeria dothidea",
+			"Botryozyma mucatilis CBS 9042 v1.0", "Botrytis cinerea v1.0",
+			"Bulgaria inquinans CBS118.31 v1.0",
+			"Byssochlamys spectabilis No. 5",
+			"Byssothecium circinans CBS 675.92 v1.0",
+			"Cadophora sp. DSE1049 v1.0", "Caecomyces churrovis A v1.0",
+			"Caliciopsis orientalis", "Calocera cornea v1.0",
+			"Calocera viscosa v1.0", "Caloscypha fulgens ATCC 42695 v1.0",
+			"Calosphaeria pulchella", "Candida albicans SC5314",
+			"Candida arabinofermentans NRRL YB-2248 v1.0",
+			"Candida tanzawaensis NRRL Y-17324 v1.0",
+			"Candida tenuis NRRL Y-1498 v1.0",
+			"Cantharellus anzutake C23 v1.0", "Capronia coronata CBS 617.96",
+			"Capronia epimyces CBS 606.96", "Capronia semiimmersa CBS27337",
+			"Catenaria anguillulae PL171 v2.0",
+			"Caulochytrium protostelioides ATCC 52028 single-cell v1.0",
+			"Caulochytrium protostelioides ATCC 52028 v1.0",
+			"Cenococcum geophilum 1.58 v2.0",
+			"Cephaloascus albidus ATCC 66658 v1.0",
+			"Cephaloascus fragrans 12-1022 v1.0",
+			"Ceraceosorus guamensis MCA 4658 v1.0",
+			"Ceratobasidium sp. (anastomosis group I", "AG-I) v1.0",
+			"Cercophora caudata CBS 606.72 v1.0",
+			"Cercophora newfieldiana SMH2532-1 v1.0",
+			"Cercophora scortea SMH4131-1 v1.0", "Cercospora zeae-maydis v1.0",
+			"Cerinomyces ceraceus ATCC 56525 v1.0",
+			"Ceriporiopsis (Gelatoporia) subvermispora B",
+			"Cerrena unicolor v1.1", "Chaetomidium fimeti CBS 168.71 v1.0",
+			"Chaetomium globosum v1.0", "Chaetosphaeria innumera",
+			"Chalara longipes BDJ v1.0",
+			"Chionosphaera apobasidialis 52639 v1.0",
+			"Chionosphaera cuniculicola CBS10063 v1.0",
+			"Choiromyces venosus 120613-1 v1.0",
+			"Chytridium lagenaria Arg66 v1.0", "Chytriomyces sp. MP 71 v1.0",
+			"Circinella umbellata NRRL1351 v1.0",
+			"Cladochytrium polystomum WB228 v1.0",
+			"Cladonia grayi Cgr/DA2myc/ss v2.0",
+			"Cladophialophora bantiana CBS 173.52",
+			"Cladophialophora carrionii CBS 160.54",
+			"Cladophialophora immunda CBS83496",
+			"Cladophialophora psammophila CBS 110553",
+			"Cladophialophora yegresii CBS 114405",
+			"Cladorrhinum bulbillosum DJ3 v1.0", "Cladosporium fulvum v1.0",
+			"Cladosporium sphaerospermum UM 843",
+			"Clathrospora elynae CBS 161.51 v1.0",
+			"Clavicorona pyxidata HHB10654 v1.0",
+			"Clavispora lusitaniae ATCC 42720", "Clavulina sp. PMI_390 v1.0",
+			"Climacocystis borealis CliBor001 v1.0",
+			"Clitocybe gibba IJFM A808 v1.0", "Clohesyomyces aquaticus v1.0",
+			"Clonostachys rosea CBS125111 v1.0", "Coccidioides immitis RS",
+			"Coccodinium bartschii CBS 121709 v1.0",
+			"Coccomyces strobi CBS 202.91 v1.0",
+			"Cochliobolus carbonum 26-R-13 v1.0",
+			"Cochliobolus heterostrophus C4 v1.0",
+			"Cochliobolus heterostrophus C5 v2.0",
+			"Cochliobolus lunatus m118 v2.0",
+			"Cochliobolus miyabeanus ATCC 44560 v1.0",
+			"Cochliobolus sativus ND90Pr v1.0",
+			"Cochliobolus victoriae FI3 v1.0",
+			"Coemansia mojavensis RSA 71 v1.0",
+			"Coemansia reversa NRRL 1564 v1.0",
+			"Coemansia spiralis RSA 1278 v1.0",
+			"Cokeromyces recurvatus NRRL 2243 v1.0",
+			"Colletotrichum acutatum CBS 112980 v2.0",
+			"Colletotrichum caudatum CBS131602 v1.0",
+			"Colletotrichum cereale CBS 129662 v1.0",
+			"Colletotrichum eremochloae CBS129661 v1.0",
+			"Colletotrichum falcatum MAFF306170 v1.0",
+			"Colletotrichum fioriniae PJ7",
+			"Colletotrichum godetiae CBS 193.32 v1.0",
+			"Colletotrichum graminicola M1.001",
+			"Colletotrichum higginsianum IMI 349063",
+			"Colletotrichum lupini CBS 109225 v1.0",
+			"Colletotrichum navitas CBS125086 v1.0",
+			"Colletotrichum nymphaeae SA-01",
+			"Colletotrichum orchidophilum IMI 309357",
+			"Colletotrichum phormii CBS102054 v1.0",
+			"Colletotrichum salicis CBS607.94",
+			"Colletotrichum simmondsii CBS122122",
+			"Colletotrichum somersetensis CBS 131599 v1.0",
+			"Colletotrichum sublineola CBS 131301 v1.0",
+			"Colletotrichum tofieldiae 0861",
+			"Colletotrichum zoysiae MAFF235873 v1.0",
+			"Conidiobolus coronatus NRRL28638 v1.0",
+			"Conidiobolus thromboides FSU 785 v1.0",
+			"Coniella lustricola B22-T-1 v1.0",
+			"Coniochaeta ligniaria CBS 111746",
+			"Coniochaeta ligniaria NRRL 30616 v1.0",
+			"Coniochaeta sp. 2T2.1 v1.0", "Coniochaeta sp. PMI_546 v1.0",
+			"Coniophora olivacea MUCL 20566 v1.0", "Coniophora puteana v1.0",
+			"Coniosporium apollinis CBS 100218",
+			"Coprinellus angulatus DOB1924 v1.0",
+			"Coprinellus micaceus FP101781 v2.0",
+			"Coprinellus pellucidus v1.0", "Coprinopsis cinerea",
+			"Coprinopsis cinerea AmutBmut pab1-1 v1.0",
+			"Coprinopsis marcescibilis CBS121175 v1.0",
+			"Coprinopsis sclerotiger v1.0", "Cordyceps militaris CM01",
+			"Corollospora maritima CBS 119819 v2.0",
+			"Cortinarius glaucopus AT 2004 276 v2.0",
+			"Corynespora cassiicola CCP v1.0",
+			"Crassisporium funariophilum DOB1098 v1.0",
+			"Crepidotus variabilis CBS 506.95 v1.0",
+			"Cronartium quercuum f. sp. fusiforme G11 v1.0",
+			"Crucibulum laeve CBS 166.37 v1.0",
+			"Cryphonectria parasitica EP155 v2.0",
+			"Cryptococcus curvatus ATCC 20509 v1.0",
+			"Cryptococcus neoformans var neoformans JEC21",
+			"Cryptococcus neoformans var. grubii H99",
+			"Cryptococcus terricola JCM 24523 v1.0",
+			"Cryptococcus vishniacii v1.0", "Cryptococcus wieringae v1.0",
+			"Cryptodiaporthe populea CFL2025 v1.0",
+			"Cryptodiaporthe sp. AZ0812 v1.0",
+			"Cucurbitaria berberidis CBS 394.84 v1.0",
+			"Cunninghamella echinulata NRRL 1382 v1.0",
+			"Cyathus striatus AH 40144 v1.0",
+			"Cyberlindnera jadinii NRRL Y-1542 v1.0",
+			"Cylindrobasidium torrendii FP15055 v1.0",
+			"Cyphellophora europaea CBS 101466",
+			"Cystostereum murrayi CysMur001 v1.0",
+			"Cytidiella melzeri FP 102339 v1.0",
+			"Cytospora chrysosperma CFL2056 v1.0",
+			"Dacryopinax primogenitus DJM 731 SSP1 v1.0",
+			"Dactylonectria estremocensis MPI-CAGE-AT-0021 v1.0",
+			"Daedalea quercina v1.0", "Daldinia eschscholzii EC12 v1.0",
+			"Debaryomyces hansenii", "Decorospora gaudefroyi v1.0",
+			"Dekkera bruxellensis CBS 2499 v2.0",
+			"Delitschia confertaspora ATCC 74209 v1.0",
+			"Delphinella strobiligena CBS 735.71 v1.0",
+			"Dendrothele bispora CBS 962.96 v1.0", "Dendryphion nanum 29 v1.0",
+			"Dentipellis sp. KUC8613 v1.0", "Diaporthe ampelina UCDDA912",
+			"Dichomitus squalens CBS463.89 v1.0",
+			"Dichomitus squalens CBS464.89 v1.0",
+			"Dichomitus squalens LYAD-421 SS1 v1.0",
+			"Dichomitus squalens OM18370.1 v1.0",
+			"Dichotomocladium elegans RSA 919- v1.0",
+			"Didymella exigua CBS 183.55 v1.0", "Didymella zeae-maydis 3018",
+			"Didymocrea sadasivanii CBS 438.65 v1.0",
+			"Dimargaris cristalligena RSA 468 single-cell v1.0",
+			"Dioszegia cryoxerica v1.0", "Diplodia seriata DS831",
+			"Dissoconium aciculare v1.0", "Dothidotthia symphoricarpi v1.0",
+			"Dothistroma septosporum NZE10 v1.0",
+			"Earliella scabrosa CIRM-BRFM 1817 v1.0",
+			"Elsinoe ampelina CECT 20119 v1.0",
+			"Encephalitozoon cuniculi GB-M1",
+			"Encephalitozoon hellem ATCC 50504",
+			"Encephalitozoon intestinalis ATCC 50506",
+			"Encephalitozoon romaleae SJ-2008", "Endocarpon pusillum Z07020",
+			"Enterocytozoon bieneusi H348", "Entoleuca mammata CFL468 v1.0",
+			"Entophlyctis helioformis JEL805 v1.0",
+			"Eremomyces bilateralis CBS 781.70 v1.0",
+			"Eremothecium gossypii ATCC 10895", "Erysiphe necator c",
+			"Erythrobasidium hasegawianum ATCC 9536 v1.0",
+			"Eurotium rubrum v1.0", "Eutypa lata UCREL1",
+			"Exidia glandulosa v1.0", "Exobasidium maculosum A7-4 v1.0",
+			"Exobasidium vaccinii MPITM v1.0",
+			"Exophiala alcalophila ATCC 48519 v1.0",
+			"Exophiala alcalophila J33 v1.0",
+			"Exophiala aquamarina CBS 119918", "Exophiala dermatitidis UT8656",
+			"Exophiala mesophila CBS40295", "Exophiala oligosperma CBS72588",
+			"Exophiala sideris CBS121828", "Exophiala spinifera CBS89968",
+			"Exophiala xenobiotica CBS118157",
+			"Fellomyces penicillatus Phaff54-35 v1.0",
+			"Fenestella fenestrata ATCC 66461 v1.0",
+			"Fennellomyces sp. T-0311 v1.0", "Fibroporia radiculosa TFFH 294",
+			"Fibulobasidium inconspicuum Phaff89-39 v1.0",
+			"Fibulorhizoctonia sp. CBS 109695 v1.0", "Fistulina hepatica v1.0",
+			"Fomes fomentarius CIRM-BRFM 1821 v1.0",
+			"Fomitiporia mediterranea v1.0",
+			"Fomitopsis betulina CIRM-BRFM 1772 v1.1",
+			"Fomitopsis pinicola FP-58527 SS1 v3.0",
+			"Fomitopsis rosea Sig1Fomros20-ss v1.0",
+			"Fonsecaea monophora CBS 269.37",
+			"Fonsecaea multimorphosa CBS 102226",
+			"Fonsecaea nubica CBS 269.64", "Fonsecaea pedrosoi CBS 271.37",
+			"Fusarium commune MPI-SDFR-AT-0072 v1.0",
+			"Fusarium equiseti G328 v1.0", "Fusarium fujikuroi IMI 58289",
+			"Fusarium graminearum v1.0", "Fusarium oxysporum FOX64 v1.0",
+			"Fusarium oxysporum f. sp. lycopersici 4287 v2",
+			"Fusarium pseudograminearum CS3096", "Fusarium redolens A4 v1.0",
+			"Fusarium solani FSIF6 v1.0", "Fusarium verticillioides 7600 v2",
+			"Gaertneriomyces semiglobifer Barr 43 v1.0",
+			"Gaeumannomyces graminis var. tritici R3-111a-1",
+			"Galerina marginata v1.0", "Ganoderma sp. 10597 SS1 v1.0",
+			"Gautieria morchelliformis GMNE.BST v1.0",
+			"Gelasinospora tetrasperma v1.0",
+			"Gilbertella persicaria var. persicaria CBS 190.32-T v1.0",
+			"Glarea lozoyensis ATCC 20868",
+			"Globomyces pollinis-pini Arg68 v1.0",
+			"Gloeopeniophorella convolvens OM19405 v1.0",
+			"Gloeophyllum trabeum v1.0",
+			"Glomerella acutata (Colletotrichum fiorinae MH 18) v1.0",
+			"Glomerella cingulata 23 (Colletotrichum gloeosporoides 23) v1.0",
+			"Glonium stellatum CBS 207.34 v1.0",
+			"Golovinomyces cichoracearum UCSC1 v1.0",
+			"Gonapodya prolifera v1.0", "Gongronella butleri v1.0",
+			"Gremmeniella abietina DAOM 170408 v1.0",
+			"Grosmannia clavigera kw1407",
+			"Guyanagaster necrorhiza MCA 3950 v1.0",
+			"Gymnascella aurantiaca v1.0", "Gymnascella citrina v1.1",
+			"Gymnopilus chrysopellus PR-1187 v1.0",
+			"Gymnopilus junonius AH 44721 v1.0",
+			"Gymnopus androsaceus JB14 v1.0",
+			"Gymnopus earleae GB-263.02 v1.0", "Gymnopus luxurians v1.0",
+			"Gyrodon lividus BX v1.0", "Gyromitra esculenta CBS101906 v1.0",
+			"Halteromyces radiatus CBS 162.75 v1.0",
+			"Hanseniaspora valbyensis NRRL Y-1626 v1.1",
+			"Hebeloma cylindrosporum h7 v2.0",
+			"Heliocybe sulcata OMC1185 v1.0", "Herpotrichia sp. AK1299 v1.0",
+			"Hesseltinella vesiculosa NRRL3301 v2.0",
+			"Heterobasidion annosum v2.0",
+			"Heterogastridium pycnidioideum ATCC MYA-4631 v1.0",
+			"Hexagonia nitida CIRM-BRFM 1802 v1.0",
+			"Histoplasma capsulatum NAm1",
+			"Homolaphlyctis polyrhiza JEL142 v1.0",
+			"Hortaea acidophila CBS 113389 v1.0",
+			"Hortaea werneckii EXF-2000 M0 v1.0",
+			"Hyalopycnis blepharistoma ATCC 48560 v1.0",
+			"Hyaloraphidium curvatum SAG235-1 v1.0",
+			"Hydnomerulius pinastri v2.0",
+			"Hydnopolyporus fimbriatus CBS384.51 v1.0",
+			"Hydnum rufescens UP504 v2.0",
+			"Hygrophoropsis aurantiaca ATCC 28755 v1.0",
+			"Hymenopellis radicata IJFM A160 v1.0",
+			"Hymenoscyphus varicosporoides PMI_453 v1.0",
+			"Hypholoma sublateritium v1.0",
+			"Hyphopichia burtonii NRRL Y-1933 v1.0",
+			"Hypoxylon sp. CI-4A v1.0", "Hypoxylon sp. CO27-5 v1.0",
+			"Hypoxylon sp. EC38 v3.0", "Hysterium pulicare",
+			"Ilyonectria europaea CBS 129078 v1.0",
+			"Ilyonectria robusta PMI_751 v1.0", "Ilyonectria sp. v1.0",
+			"Irpex lacteus CCBAS Fr. 238 617/93 v1.0",
+			"Jaapia argillacea v1.0", "Jaminaea sp. MCA 5214 v1.0",
+			"Kalaharituber pfeilii F3 v1.0",
+			"Karstenula rhodostoma CBS 690.94 v1.0",
+			"Kazachstania africana CBS 2517", "Khuskia oryzae ATCC 28132 v1.0",
+			"Kickxella alabastrina RSA 675 v1.0", "Kluyveromyces lactis",
+			"Kockovaella imperatae NRRL Y-17943 v1.0",
+			"Kuraishia capsulata CBS 1993",
+			"Laccaria amethystina LaAM-08-1 v2.0", "Laccaria bicolor v2.0",
+			"Lactarius quietus S23C v1.0",
+			"Lactifluus subvellereus BPL653 v1.0",
+			"Lactifluus volemus BPL652 v1.0",
+			"Laetiporus sulphureus var. sulphureus v1.0",
+			"Lasiosphaeria miniovina SMH2392-1A v1.0",
+			"Lasiosphaeria ovina CBS 958.72 v1.0",
+			"Lasiosphaeriaceae sp. AZ0830 v1.0",
+			"Lasiosphaeris hirsuta SMH4607-1 v1.0",
+			"Lasiosphaeris hispida CBS 955.72 v1.0",
+			"Lecythophora sp. AK0013 v1.0",
+			"Leiotrametes lactinea CIRM-BRFM 1664 v1.0",
+			"Leiotrametes menziesii CIRM-BRFM 1781 v1.0",
+			"Leiotrametes sp BRFM 1775 v1.0",
+			"Lentinellus vulpinus AHS73672-sp v1.0",
+			"Lentinula afn. lateritia sp2 HRB7682 ss15 v1.0",
+			"Lentinula edodes Le(Bin) 0899 ss11 v1.0",
+			"Lentinula lateritia RHP3577 ss4 v1.0",
+			"Lentinula raphanica INPA1701G ss19 v1.0",
+			"Lentinus tigrinus ALCF2SS1-6 v1.0",
+			"Lentinus tigrinus ALCF2SS1-7 v1.0", "Lentinus tigrinus v1.0",
+			"Lentithecium fluviatile v1.0",
+			"Leotiomycetes sp. MPI-SDFR-AT-0126 v1.0",
+			"Lepidopterella palustris v1.0", "Lepista nuda CBS 247.69 v1.0",
+			"Leptodontidium orchidicola ZT98 v2.0",
+			"Leptodontium sp. PMI_412 v1.0", "Leptosphaeria maculans",
+			"Leucoagaricus gongylophorus Ac12",
+			"Leucogyrophana mollusca KUC20120723A-06 v1.0",
+			"Leucosporidiella creatinivora 62-1032 v1.0",
+			"Lichtheimia corymbifera JMRC:FSU:9682",
+			"Lichtheimia hyalospora v1.0",
+			"Linderina pennispora ATCC 12442 v1.0",
+			"Lindgomyces ingoldianus ATCC 200398 v1.0",
+			"Lindra thalassiae JK4322 v1.0",
+			"Lineolata rhizophorae ATCC 16933 v1.0",
+			"Lipomyces starkeyi NRRL Y-11557 v1.0",
+			"Lizonia empirigonia CBS 542.76 v1.0",
+			"Lobaria pulmonaria Africa extracted metagenome v1.0",
+			"Lobaria pulmonaria Scotland extracted metagenome v1.0",
+			"Lobaria pulmonaria Scotland reference genome v1.0",
+			"Lobaria pulmonaria Spain extracted metagenome v1.0",
+			"Lobaria pulmonaria Switzerland extracted metagenome v1.0",
+			"Lobosporangium transversale NRRL 3116 v1.0",
+			"Lodderomyces elongisporus NRRL YB-4239",
+			"Lollipopaia minuta P26; CBS 116597 v1.0",
+			"Lophiostoma macrostomum v1.0",
+			"Lophiotrema nucula CBS 627.86 v1.0",
+			"Lophium mytilinum CBS 269.34 v1.0",
+			"Lophodermium nitens PLMe3-1-3 v1.0",
+			"Loramyces juncicola 46458 v1.0",
+			"Loramyces macrosporus CBS235.53 v1.0",
+			"Lycoperdon perlatum FP-102459-T v1.0",
+			"Macrolepiota fuliginosa MF-IS2 v1.0",
+			"Macrophomina phaseolina 39R(3) v1.0",
+			"Macrophomina phaseolina MS6",
+			"Macroventuria anomochaeta CBS 525.71 v1.0",
+			"Magnaporthe grisea v1.0", "Magnaporthiopsis poae ATCC 64411",
+			"Malassezia globosa", "Malassezia sympodialis ATCC 42132",
+			"Marasmius fiardii PR-910 v1.0", "Mariannaea sp. PMI_226 v1.0",
+			"Marssonina brunnea f. sp. multigermtubi MB_m1",
+			"Martensiomyces pterosporus CBS 209.56 v1.0",
+			"Massarina eburnea CBS 473.64 v1.0",
+			"Massariosphaeria phaeospora CBS 611.86 v1.0",
+			"Meira miltonrushii MCA 3882 v1.0",
+			"Melampsora allii-populina 12AY07 v1.0",
+			"Melampsora larici-populina v2.0", "Melampsora lini CH5",
+			"Melanconium sp. NRRL 54901 v1.0", "Melanomma pulvis-pyrius v1.0",
+			"Melanops tulasnei CBS 116805 v1.0",
+			"Melanospora tiffanyae F1KG0001 v1.0",
+			"Melanotaenium endogenum CBS481.91 v1.0",
+			"Meliniomyces bicolor E v2.0", "Meliniomyces variabilis F v1.0",
+			"Meredithblackwellia eburnea MCA 4105 v1.0",
+			"Metarhizium acridum CQMa 102", "Metarhizium robertsii ARSEF 23",
+			"Metschnikowia bicuspidata NRRL YB-4993 v1.0",
+			"Metschnikowia bicuspidata single-cell v1.0",
+			"Metschnikowia fructicola 277",
+			"Meyerozyma guilliermondii ATCC 6260",
+			"Microascus trigonosporus CBS 218.31 v1.0",
+			"Microbotryum lychnidis-dioicae p1A1 Lamole",
+			"Microbotryum violaceum p1A1 Lamole v1.0",
+			"Microdochium bolleyi J235TASD1 v1.0",
+			"Microdochium trichocladiopsis CBS 623.77 v1.0",
+			"Microsporum canis CBS 113480",
+			"Microthyrium microscopicum CBS 115976 v1.0",
+			"Mixia osmundae IAM 14324 v1.0", "Moesziomyces aphidis DSM 70725",
+			"Monacrosporium haptotylum CBS 200.50", "Monascus purpureus v1.0",
+			"Monascus ruber NRRL 1597 v1.0", "Moniliella sp. MCA 3643 v1.0",
+			"Moniliophthora perniciosa FA553",
+			"Morchella conica CCBAS932 v1.0",
+			"Morchella importuna SCYDJ1-A1 v1.0",
+			"Morchella snyderi DOB2414 v1.0",
+			"Mortierella elongata AG-77 v2.0",
+			"Mortierella elongata NEFU14 v1.0",
+			"Mortierella multidivaricata RSA 2152 T v1.0",
+			"Mortierella verticillata NRRL 6337",
+			"Mrakia frigida ATCC 22029 v1.0",
+			"Mucor circinelloides CBS277.49 v2.0",
+			"Mucor cordense RSA 1222 v1.0", "Mucor heterogamus NRRL 1489 v1.0",
+			"Multifurca ochricompacta BPL690 v1.0",
+			"Mutinus elegans ME.BST v1.0",
+			"Myceliophthora heterothallica CBS 202.75 v1.0",
+			"Myceliophthora heterothallica CBS 203.75 v1.0",
+			"Myceliophthora thermophila (Sporotrichum thermophile) v2.0",
+			"Mycena albidolilacea CBHHK002 v1.0",
+			"Mycena alexandri CBHHK200 v1.0", "Mycena amicta BAPX v1.0",
+			"Mycena belliae CBHHK173m v1.0",
+			"Mycena capillaripes Frankland 9286 v1.0",
+			"Mycena crocata CBHHK184 v1.0",
+			"Mycena epipterygia CBHHK145m v1.0",
+			"Mycena filopes CBHHK001 v1.0", "Mycena floridula CBHHK072 v1.0",
+			"Mycena galopus ATCC-62051 v1.0",
+			"Mycena haematopus CBHHK189 v1.0",
+			"Mycena rebaudengoi CBHHK068 v1.0", "Mycena rosella CBHHK067 v1.0",
+			"Mycena sanguinolenta CBHHK176m v1.0",
+			"Mycena sp. CBHHK59/15 v1.0", "Mycena vitilis CBHHK169m v1.0",
+			"Mycosphaerella graminicola v2.0",
+			"Mycotypha africana NRRL 2978 v1.0",
+			"Myriangium duriaei CBS 260.36 v1.0",
+			"Myrothecium inundatum CBS 120646 v1.0",
+			"Mytilinidion resinicola CBS 304.34 v1.0",
+			"Nadsonia fulvescens var. elongata DSM 6958 v1.0",
+			"Naiadella fluitans ATCC 64713 v1.0",
+			"Nakaseomyces bacillisporus CBS 7720",
+			"Nakaseomyces delphensis CBS 2170",
+			"Naohidea sebacea CBS 8477 (P95) v1.0",
+			"Nectria haematococca v2.0", "Nematocida parisii ERTm1",
+			"Neocallimastix californiae G1 v1.0",
+			"Neofusicoccum parvum UCRNP2", "Neolecta irregularis DAH-1 v1.0",
+			"Neolentinus lepideus v1.0", "Neonectria ditissima R09/05",
+			"Neosartorya fischeri NRRL 181",
+			"Neurospora crassa FGSC 73 trp-3 v1.0",
+			"Neurospora crassa OR74A v2.0",
+			"Neurospora crassa clade B FGSC 4830 v1.0",
+			"Neurospora discreta FGSC 8579 mat A",
+			"Neurospora hispaniola FGSC 10403 v1.0",
+			"Neurospora tetrasperma FGSC 2509 mat a v1.0",
+			"Niesslia exilis CBS 358.70 v1.0", "Nosema ceranae BRL01",
+			"Obba rivulosa 3A-2 v1.0", "Obelidium mucronatum JEL802 v1.0",
+			"Ogataea parapolymorpha DL-1",
+			"Ogataea polymorpha NCYC 495 leu1.1 v2.0",
+			"Oidiodendron maius Zn v1.0", "Oliveonia pauxilla KC1149 v1.0",
+			"Omphalotus olearius", "Onnia scaura P-53A v1.0",
+			"Ophiobolus disseminans CBS 113818 v1.0",
+			"Ophiostoma novo-ulmi subsp. novo-ulmi H327",
+			"Ophiostoma piceae UAMH 11346", "Ophiostoma piliferum",
+			"Orpinomyces sp.", "Oudemansiella mucida CBS 558.79 v1.0",
+			"Pachysolen tannophilus NRRL Y-2460 v1.2",
+			"Paecilomyces niveus CO7 v1.0",
+			"Paecilomyces variotii CBS 101075 v1.0",
+			"Panaeolus papilionaceus CIRM-BRFM 715 v1.0",
+			"Panellus stipticus KUC8834 v1.1", "Panellus stipticus LUM v1.0",
+			"Panus rudis PR-1116 ss-1 v1.0",
+			"Paracoccidioides brasiliensis Pb03",
+			"Paracoccidioides brasiliensis Pb18",
+			"Paraconiothyrium sporulosum AP3s5-JAC2a v1.0",
+			"Paraphoma chrysanthemicola PD 92/468 v1.0",
+			"Paraphysoderma sedebokerense JEL821 v1.0",
+			"Parasitella parasitica v1.0", "Patellaria atrata v1.0",
+			"Paxillus adelphus Ve08.2h10 v2.0",
+			"Paxillus ammoniavirescens Pou09.2 v1.0",
+			"Paxillus involutus ATCC 200175 v1.0",
+			"Penicillium antarcticum IBT 31811",
+			"Penicillium bilaiae ATCC 20851 v1.0",
+			"Penicillium brevicompactum 1011305 v2.0",
+			"Penicillium brevicompactum AgRF18 v1.0",
+			"Penicillium canescens ATCC 10419 v1.0",
+			"Penicillium chrysogenum Wisconsin 54-1255",
+			"Penicillium chrysogenum v1.0",
+			"Penicillium coprophilum IBT 31321",
+			"Penicillium decumbens IBT 11843", "Penicillium digitatum PHI26",
+			"Penicillium digitatum Pd1",
+			"Penicillium expansum ATCC 24692 v1.0", "Penicillium expansum d1",
+			"Penicillium fellutanum ATCC 48694 v1.0",
+			"Penicillium flavigenum IBT 14082",
+			"Penicillium glabrum DAOM 239074 v1.0",
+			"Penicillium griseofulvum PG3", "Penicillium italicum PHI-1",
+			"Penicillium janthinellum ATCC 10455 v1.0",
+			"Penicillium lanosocoeruleum ATCC 48919 v1.0",
+			"Penicillium nalgiovense FM193", "Penicillium oxalicum 114-2",
+			"Penicillium polonicum IBT 4502",
+			"Penicillium raistrickii ATCC 10490 v1.0",
+			"Penicillium solitum IBT 29525", "Penicillium steckii IBT 24891",
+			"Penicillium subrubescens FBCC1632 / CBS132785",
+			"Penicillium swiecickii 182 6C1 v1.0",
+			"Penicillium thymicola DAOMC 180753 v1.0",
+			"Penicillium vulpinum IBT 29486", "Peniophora sp. CONTA v1.0",
+			"Peniophora sp. v1.0", "Periconia macrospinosa DSE2036 v1.0",
+			"Peziza echinospora DOB1120 v1.0",
+			"Phaeoacremonium aleophilum UCRPA7",
+			"Phaeoacremonium sp. FL0889 v1.0",
+			"Phaeomoniella chlamydospora UCRPC4",
+			"Phaeosphaeria poagena CBS 136771 v1.0",
+			"Phaeosphaeriaceae sp. PMI_808 v1.0",
+			"Phanerochaete carnosa HHB-10118-Sp v1.0",
+			"Phanerochaete chrysosporium RP-78 v2.2",
+			"Phascolomyces articulosus v1.0",
+			"Phellinus ferrugineofuscus SpK3Phefer14 v1.0",
+			"Phellinus igniarius CCBS 575 v1.0",
+			"Phellopilus nigrolimitatus SigPhenig9 v1.0",
+			"Phialocephala scopiformis 5WS22E1 v1.0",
+			"Phialophora attae CBS 131958",
+			"Phlebia brevispora HHB-7030 SS6 v1.0",
+			"Phlebia centrifuga FBCC195", "Phlebiopsis gigantea v1.0",
+			"Pholiota alnicola AH 47727 v1.0",
+			"Pholiota conissans CIRM-BRFM 674 v1.0",
+			"Pholiota highlandensis v1.0", "Phoma tracheiphila IPT5 v1.0",
+			"Phycomyces blakesleeanus NRRL1555 v2.0",
+			"Phycomyces nitens S607 v1.0", "Phycomyces nitens S608 v1.0",
+			"Phycomyces nitens S609 v1.0",
+			"Phyllosticta capitalensis CBS 128856 v1.0",
+			"Phyllosticta citriasiana v1.0",
+			"Phyllosticta citribraziliensis CBS 100098 v1.0",
+			"Phyllosticta citricarpa CBS 127454 v1.0",
+			"Phyllosticta citrichinaensis CBS 130529 v1.0",
+			"Phyllosticta sp. CPC 27169 v1.0",
+			"Phyllosticta sp. CPC 27913 v1.0", "Pichia membranifaciens v2.0",
+			"Pichia pastoris", "Piedraia hortae v1.1",
+			"Pilaira anomala RSA1997 v1.0",
+			"Pilobolus umbonatus NRRL 6349 v1.0",
+			"Piloderma croceum F 1598 v1.0",
+			"Piptocephalis cylindrospora RSA 2659 single-cell v3.0",
+			"Piriformospora indica DSM 11827 from MPI",
+			"Piromyces finnis v3.0", "Piromyces sp. E2 v1.0",
+			"Pisolithus microcarpus 441 v1.0",
+			"Pisolithus tinctorius Marx 270 v1.0",
+			"Plectania melastoma CBS 918.72 v1.0",
+			"Plectosphaerella cucumerina DS2psM2a2 v1.0",
+			"Plectosphaerella cucumerina RP01 v1.0",
+			"Pleomassaria siparia v1.0", "Pleurotus eryngii ATCC 90797 v1.0",
+			"Pleurotus ostreatus PC15 v2.0", "Pleurotus ostreatus PC9 v1.0",
+			"Plicaturopsis crispa v1.0", "Pluteus cervinus NL-1719 v1.0",
+			"Pneumocystis jirovecii", "Pochonia chlamydosporia 170",
+			"Podospora anserina S mat+", "Podospora anserina mat+ v1.0",
+			"Podospora appendiculata CBS 314.62 v1.0",
+			"Podospora curvicolla TEP21a v1.0",
+			"Podospora didyma CBS 232.78 v1.0", "Polychaeton citri v1.0",
+			"Polyplosphaeria fusca CBS 125425 v1.0",
+			"Polyporus arcularius v1.0", "Polyporus brumalis BRFM 1820 v1.0",
+			"Polyporus squamosus CCBS 676 v1.0",
+			"Porodaedalea chrysoloma FP-135951 v1.0",
+			"Porodaedalea niemelaei PN71-100-IP13 v1.0",
+			"Postia placenta MAD 698-R v1.0",
+			"Postia placenta MAD-698-R-SB12 v1.0",
+			"Powellomyces hirtus BR81 v1.0", "Protomyces inouyei",
+			"Protomyces lactucaedebilis 12-1054 v1.0",
+			"Pseudocercospora (Mycosphaerella) fijiensis v2.0",
+			"Pseudographis elatina", "Pseudogymnoascus destructans 20631-21",
+			"Pseudomassariella vexata CBS 129021 v1.0",
+			"Pseudomicrostroma glucosiphilum gen et sp. nov. MCA 4718 v1.0",
+			"Pseudovirgaria hyperparasitica CBS 121739 v1.0",
+			"Pseudozyma antarctica T-34", "Pseudozyma hubeiensis SY62",
+			"Psilocybe cubensis v1.0", "Pterula gracilis CBS309.79 v1.0",
+			"Puccinia coronata avenae 12NC29",
+			"Puccinia coronata avenae 12SD80",
+			"Puccinia graminis f. sp. tritici v2.0",
+			"Puccinia striiformis f. sp. tritici 104 E137 A-",
+			"Puccinia striiformis f. sp. tritici PST-130",
+			"Puccinia striiformis f. sp. tritici PST-78 v1.0",
+			"Puccinia triticina 1-1 BBBD Race 1",
+			"Punctularia strigosozonata v1.0",
+			"Purpureocillium sp. UdeA0106 v1.0",
+			"Pycnoporus cinnabarinus BRFM 137",
+			"Pycnoporus cinnabarinus CIRM-BRFM 50 v1.0",
+			"Pycnoporus coccineus BRFM 310 v1.0",
+			"Pycnoporus coccineus CIRM1662",
+			"Pycnoporus puniceus CIRM-BRFM 1868 v1.0",
+			"Pycnoporus sanguineus BRFM 1264 v1.0",
+			"Pyrenochaeta lycopersici ISPaVe ER 1252 v1.0",
+			"Pyrenochaeta sp. DS3sAY3a v1.0", "Pyrenophora teres f. teres",
+			"Pyrenophora tritici-repentis", "Pyronema confluens CBS100304",
+			"Radiomyces spectabilis NRRL 2753 v1.0",
+			"Ramaria rubella (R. acris) UT-36052-T v1.0",
+			"Ramicandelaber brevisporus CBS 109374 v1.0",
+			"Rhexocercosporidium sp. MPI-PUGE-AT-0058 v1.0",
+			"Rhizoclosmatium globosum JEL800 v1.0",
+			"Rhizoctonia solani AG-1 IB",
+			"Rhizodiscina lignyota CBS 133067 v1.0",
+			"Rhizophagus irregularis A1 v1.0",
+			"Rhizophagus irregularis A4 v1.0",
+			"Rhizophagus irregularis A5 v1.0",
+			"Rhizophagus irregularis B3 v1.0",
+			"Rhizophagus irregularis C2 v1.0",
+			"Rhizophagus irregularis DAOM 181602 v1.0",
+			"Rhizophagus irregularis DAOM 197198 v2.0",
+			"Rhizopogon salebrosus TDB-379 v1.0",
+			"Rhizopogon truncatus FC74 v1.0", "Rhizopogon vesiculosus Smith",
+			"Rhizopogon vinicolor AM-OR11-026 v1.0",
+			"Rhizopogon vulgaris FC72 v1.0",
+			"Rhizopus delemar 99-880 from Broad",
+			"Rhizopus microsporus ATCC11559 v1.0",
+			"Rhizopus microsporus var. chinensis CCTCC M201021",
+			"Rhizopus microsporus var. microsporus ATCC52813 v1.0",
+			"Rhizopus microsporus var. microsporus ATCC52814 v1.0",
+			"Rhizoscyphus ericae UAMH 7357 v1.0",
+			"Rhodocollybia butyracea AH 40177 v1.0",
+			"Rhodofomes roseus CIRM-BRFM 1785 v1.0",
+			"Rhodosporidium diobovatum 08-225 v1.0",
+			"Rhodosporidium toruloides ATCC26217 v1.0",
+			"Rhodosporidium toruloides IFO0559_1",
+			"Rhodosporidium toruloides IFO0880 v2.0",
+			"Rhodosporidium toruloides IFO0880 v4.0",
+			"Rhodosporidium toruloides IFO1236_1",
+			"Rhodosporidium toruloides NP11", "Rhodotorula glutinis v1.0",
+			"Rhodotorula graminis strain WP1 v1.1",
+			"Rhodotorula minuta MCA 4210 v1.0",
+			"Rhodotorula mucilaginosa ATCC58901 v1.0",
+			"Rhodotorula sp. J31 v1.0", "Rhodotorula sp. JG-1b",
+			"Rhytidhysteron rufulum", "Rickenella fibula HBK330-10 v1.0",
+			"Rickenella mellea v1.0 (SZMC22713)",
+			"Rigidoporus microporus ED310 v1.0", "Rozella allomycis CSF55",
+			"Rozella allomycis CSF55 single-cell v1.0",
+			"Russula brevipes BPL707 v1.0", "Russula compacta BPL669 v1.0",
+			"Russula dissimulans BPL704 v1.0",
+			"Russula ochroleuca Prilba v1.0", "Russula rugulosa BPL654 v1.0",
+			"Russula vinacea BPL710 v1.0", "Rutstroemia firma CBS 115.86 v1.0",
+			"Saccharata proteae CBS 121410 v1.0",
+			"Saccharomyces cerevisiae M3707 Dikaryon",
+			"Saccharomyces cerevisiae M3836 v1.0",
+			"Saccharomyces cerevisiae M3837 v1.0",
+			"Saccharomyces cerevisiae M3838 v1.0",
+			"Saccharomyces cerevisiae M3839 v1.0",
+			"Saccharomyces cerevisiae S288C",
+			"Saccharomyces cerevisiae YB210 v1.0",
+			"Saitoella complicata NRRL Y-17804 v1.0",
+			"Saksenaea vasiformis B4078",
+			"Sarcoscypha coccinea ATCC 58028 v1.0",
+			"Scheffersomyces stipitis NRRL Y-11545 v2.0",
+			"Schizophyllum commune H4-8 v3.0",
+			"Schizophyllum commune Loenen D v1.0",
+			"Schizophyllum commune Tattone D v1.0",
+			"Schizopora paradoxa KUC8140 v1.0",
+			"Schizosaccharomyces cryophilus OY26",
+			"Schizosaccharomyces japonicus yFS275",
+			"Schizosaccharomyces octosporus yFS286",
+			"Schizosaccharomyces pombe",
+			"Schizothecium vesticola SMH3187-1 v1.0",
+			"Scleroderma citrinum Foug A v1.0",
+			"Sclerogaster hysterangioides SCL2.BST v1.0",
+			"Sclerophora sanguinea CBS100924 v1.0",
+			"Sclerotinia sclerotiorum v1.0", "Scytinostroma sp. KUC9335 v1.0",
+			"Sebacina vermifera MAFF 305830 v1.0",
+			"Septobasidium sp. PNB30-8B v1.0", "Septoria musiva SO2202 v1.0",
+			"Septoria populicola v1.0", "Serendipita sp. 407 v1.0",
+			"Serendipita vermifera ssp. bescii NFPB0129 v1.0",
+			"Serpula himantioides (S.lacrymans var shastensis) MUCL38935 v1.0",
+			"Serpula lacrymans S7.3 v2.0", "Serpula lacrymans S7.9 v2.0",
+			"Setomelanomma holmii CBS 110217 v1.0",
+			"Setosphaeria turcica Et28A v2.0",
+			"Setosphaeria turcica NY001 v2.0",
+			"Sirobasidium intermedium CBS7805 v1.0",
+			"Sistotremastrum niveocremeum HHB9708 ss-1 1.0",
+			"Sistotremastrum suecicum v1.0", "Slooffia pilatii Y-17178 v1.0",
+			"Smittium culicis GSMNP", "Smittium culicis ID-206-W2",
+			"Smittium mucronatum ALG-7-W6", "Sodiomyces alkalinus v1.0",
+			"Sordaria brevicollis FGSC1904 v1.0",
+			"Sparassis latifolia CCMJ1100 v1.0",
+			"Spathaspora passalidarum NRRL Y-27907 v2.0",
+			"Spathularia flavida", "Sphaerobolus stellatus v1.0",
+			"Spinellus fusiger NRRL 22323 v1.0",
+			"Spizellomyces punctatus DAOM BR117",
+			"Sporidiobolus pararoseus Phaff 68-350 v1.0",
+			"Sporisorium reilianum SRZ2",
+			"Sporobolomyces linderae CBS 7893 v1.0",
+			"Sporobolomyces roseus v1.0",
+			"Sporodiniella umbellata MES 1446 v1.0",
+			"Sporopachydermia lactativora Phaff 68-199 v1.0",
+			"Sporormia fimetaria v1.0",
+			"Stachybotrys elegans LAHC-LSPK-M15 v1.0",
+			"Stagonospora nodorum SN15 v2.0",
+			"Stagonospora sp. SRC1lsM3a v1.0",
+			"Stanjemonium grisellum CBS 655.79 v1.0",
+			"Stemphylium lycopersici CIDEFI-216",
+			"Stereum hirsutum FP-91666 SS1 v1.0",
+			"Sugiyamaella americana NRRL YB-2067 v1.0",
+			"Suillus americanus EM31 v1.0", "Suillus ampliporus FC55 v1.0",
+			"Suillus brevipes Sb2 v2.0", "Suillus clintonianus FC179 v1.0",
+			"Suillus cothurnatus VC 1858 v1.0", "Suillus decipiens EM49 v1.0",
+			"Suillus granulatus EM37 v1.0", "Suillus hirtellus EM16 v1.0",
+			"Suillus luteus UH-Slu-Lm8-n1 v3.0", "Suillus pictus EM44 v1.0",
+			"Suillus subalutaceus FC151 v1.0", "Suillus subaureus MN1 v1.0",
+			"Suillus tomentosus FC115 v1.0", "Symbiotaphrina kochii v1.0",
+			"Sympodiomyces attinorum NRRL Y-27639 v1.0",
+			"Syncephalastrum racemosum NRRL 2496 v1.0",
+			"Syncephalis fuscata S228 v1.0",
+			"Syncephalis plumigaleata NRRL S24 v1.0",
+			"Syncephalis pseudoplumigaleata Benny S71-1 single-cell v1.0",
+			"Talaromyces aculeatus ATCC 10409 v1.0",
+			"Talaromyces borbonicus CBS 141340",
+			"Talaromyces marneffei ATCC 18224",
+			"Talaromyces proteolyticus PMI_201 v1.0",
+			"Talaromyces stipitatus ATCC 10500", "Taphrina deformans",
+			"Teratosphaeria nubilosa CBS 116005 v1.0",
+			"Terfezia boudieri ATCC MYA-4762 v1.1",
+			"Terfezia claveryi T7 v1.0", "Testicularia cyperi MCA 3645 v1.0",
+			"Thamnidium elegans v1.0",
+			"Thamnocephalis sphaerospora RSA 1356 single-cell v1.0",
+			"Thanatephorus cucumeris PT424 v1.0",
+			"Thelebolus microsporus ATCC 90970 v1.0", "Thelebolus stercoreus",
+			"Thelephora ganbajun P2 v1.0", "Thermoascus aurantiacus v1.0",
+			"Thermomyces lanuginosus SSBP",
+			"Thielavia antarctica CBS 123565 v1.0",
+			"Thielavia appendiculata CBS 731.68 v1.0",
+			"Thielavia arenaria CBS 508.74 v1.0",
+			"Thielavia hyrcaniae CBS 757.83 v1.0", "Thielavia terrestris v2.0",
+			"Thozetella sp. PMI_491 v2.0", "Tilletiaria anomala UBC 951 v1.0",
+			"Tilletiopsis albescens v1.0", "Tilletiopsis sp. TKC30 v1.0",
+			"Tilletiopsis washingtonensis MCA 4186 v1.0",
+			"Tolypocladium inflatum NRRL 8044",
+			"Torpedospora radiata JK5252C v1.0",
+			"Tortispora caseinolytica Y-17796 v1.0",
+			"Torulaspora delbrueckii CBS 1146",
+			"Tothia fuscella CBS 130266 v1.0",
+			"Trametes betulina CIRM-BRFM 1801 v1.0",
+			"Trametes cingulata BRFM 1805 v1.0",
+			"Trametes gibbosa CIRM-BRFM 1770 v1.0",
+			"Trametes ljubarskyi CIRM1659 v1.0",
+			"Trametes maxima CIRM-BRFM 1813 v1.0",
+			"Trametes meyenii CIRM-BRFM 1810 v1.0",
+			"Trametes polyzona CIRM-BRFM 1798 v1.0",
+			"Trametes pubescens FBCC735", "Trametes versicolor v1.0",
+			"Trametopsis cervina CIRM-BRFM 1824 v1.0",
+			"Trematosphaeria pertusa CBS 122368 v1.0",
+			"Tremella encephala 68-887.2 v1.0",
+			"Tremella mesenterica Fries v1.0", "Trichaptum abietinum v1.0",
+			"Tricharina praecox DOB2270 v1.0",
+			"Trichodelitschia bisporula CBS 262.69 v1.0",
+			"Trichoderma asperellum CBS 433.97 v1.0",
+			"Trichoderma asperellum TR356 v1.0", "Trichoderma atroviride v2.0",
+			"Trichoderma citrinoviride TUCIM 6016 v4.0",
+			"Trichoderma gamsii T6085",
+			"Trichoderma harzianum CBS 226.95 v1.0",
+			"Trichoderma harzianum TR274 v1.0",
+			"Trichoderma longibrachiatum ATCC 18648 v3.0",
+			"Trichoderma reesei RUT C-30 v1.0", "Trichoderma reesei v2.0",
+			"Trichoderma virens Gv29-8 v2.0", "Tricholoma matsutake 945 v3.0",
+			"Trichomonascus petasosporus NRRL YB-2093 v1.0",
+			"Trichophaea hybrida UTF0779 v1.0",
+			"Trichophyton rubrum CBS 118892",
+			"Trichophyton verrucosum HKI 0517",
+			"Trichosporon asahii var. asahii CBS 2479",
+			"Trichosporon asahii var. asahii CBS 8904",
+			"Trichosporon chiarellii MYA-4694 v1.0",
+			"Trichosporon guehoae v1.0",
+			"Trichosporon oleaginosus IBC0246 v1.0",
+			"Trinosporium guianense CBS132537 v1.0",
+			"Triparticalcar arcticum BR59 v1.0",
+			"Tritirachium sp. CBS 265.96 v1.0",
+			"Truncatella angustata HP017 v1.0", "Trypethelium eluteriae v1.0",
+			"Tuber borchii Tbo3840 v1.0", "Tuber melanosporum Mel28 v1.0",
+			"Tulasnella calospora AL13/4D v1.0",
+			"Tulasnella calospora UAMH 9824 v1.0",
+			"Umbelopsis isabellina AD026 v1.0",
+			"Umbelopsis ramanniana AG # v1.0",
+			"Umbelopsis sp. nov. AD052 v1.0", "Uncinocarpus reesii 1704",
+			"Urocystis primulicola RUB 030670 v1.0",
+			"Usnea florida ATCC18376 v1.0", "Ustilaginoidea virens",
+			"Ustilago hordei Uh4857_4", "Ustilago maydis 521 v2.0",
+			"Valetoniellopsis laxa CBS 191.97 v1.0",
+			"Vararia minispora EC-137 v1.0", "Venturia inaequalis",
+			"Venturia pirina", "Verruconis gallopava",
+			"Verruculina enalia CBS 304.66 v1.0",
+			"Verticillium alfalfae VaMs.102", "Verticillium dahliae v1.0",
+			"Violaceomyces palustris SA 807 v1.0", "Volvariella volvacea V23",
+			"Vuilleminia comedens VcCUCC2015_SSI3 v1.0",
+			"Vuilleminia comedens VcCUCC2015_SSI6 v1.0",
+			"Wallemia ichthyophaga EXF-994", "Wallemia mellicola v1.0",
+			"Westerdykella ornata CBS 379.55 v1.0",
+			"Wickerhamiella domercqiae NRRL Y-6692 v1.0",
+			"Wickerhamomyces anomalus NRRL Y-366-8 v1.0",
+			"Wilcoxina mikolae CBS 423.85 v1.0",
+			"Wolfiporia cocos MD-104 SS10 v1.0",
+			"Xanthoria parietina 46-1-SA22 v1.1",
+			"Xenasmatella vaga CBS212.54 v1.0", "Xerocomus badius 84.06 v1.0",
+			"Xylaria hypoxylon OSC100004 v1.0", "Xylariales sp. PMI_506 v1.0",
+			"Xylona heveae TC161 v1.0", "Yarrowia lipolytica (strain CLIB122)",
+			"Yarrowia lipolytica FKP355 v1.0",
+			"Zancudomyces culisetae COL-18-3",
+			"Zasmidium cellare ATCC 36951 v1.0",
+			"Zoophthora radicans ATCC 208865 v1.0", "Zopfia rhizophila v1.0",
+			"Zychaea mexicana RSA 1403 v1.0",
+			"Zygoascus hellenicus Y-7136 v1.0",
+			"Zygosaccharomyces rouxii CBS732",
+			"Zymoseptoria ardabiliae STIR04_1.1.1",
+			"Zymoseptoria brevis Zb18110",
+			"Zymoseptoria pseudotritici STIR04_2.2.1" ];
+	$( window ).resize(function() {
+		  footerAlign();
+		});	
+	function footerAlign() {
+		  $('footer').css('display', 'block');
+		  $('footer').css('height', 'auto');
+		  var footerHeight = $('footer').outerHeight();
+		  $('body').css('padding-bottom', footerHeight);
+		  $('footer').css('height', footerHeight);
+		}
+
+
+	$(document)
+			.ready(
+					function() {
+						 footerAlign();
+						$("#myInputIdButton")
+								.click(
+										function() {
+											var orderCriteria = $(
+													"#orderCriteria").val();
+											var myInput = $("#myInput").val();
+											var Url = 'searchGenome/'
+													+ orderCriteria + '/'
+													+ myInput;
+											$
+													.ajax({
+														type : "GET",
+														url : Url,
+														async : false,
+														dataType : "json",
+														headers : {
+															'Accept' : 'application/json',
+															'Content-Type' : 'text/plain'
+														},
+														success : function(
+																response) {
+															var result = jQuery
+																	.parseJSON(JSON
+																			.stringify(response));
+															var col = [];
+															for (var i = 0; i < result.length; i++) {
+																for ( var key in result[i]) {
+																	if (col
+																			.indexOf(key) === -1) {
+																		col
+																				.push(key);
+																	}
+																}
+															}
+
+															var container = document
+																	.createElement("div");
+															container
+																	.setAttribute(
+																			'class',
+																			'container');
+															var row = document
+																	.createElement("div");
+															row.setAttribute(
+																	'class',
+																	'row');
+															var alertGroup = document
+																	.createElement("div");
+															alertGroup
+																	.setAttribute(
+																			'class',
+																			'alert-group');
+															var row0 = document
+																	.createElement("div");
+															row0.setAttribute(
+																	'class',
+																	'row');
+															var col0 = document
+																	.createElement("div");
+
+															col0
+																	.setAttribute(
+																			'class',
+																			'col-sm-2 col-xs-2 col-md-2 col-lg-2 ');
+
+															col0
+																	.setAttribute(
+																			'style',
+																			'font-weight: bold; text-transform: uppercase; padding-top: 1px;  float:left;');
+															var p01 = document
+																	.createElement("h2");
+															p01
+																	.setAttribute(
+																			'class',
+																			'bg-primary');
+															p01.innerHTML = "Name ";
+
+															var col02 = document
+																	.createElement("div");
+															col02
+																	.setAttribute(
+																			'class',
+																			'col-sm-4 col-xs-4 col-md-4 col-lg-4');
+															col02
+																	.setAttribute(
+																			'style',
+																			'font-weight: bold; text-transform: uppercase; padding-top: 1px;  float:left;');
+															var p02 = document
+																	.createElement("h2");
+															p02
+																	.setAttribute(
+																			'class',
+																			'bg-primary');
+															p02.innerHTML = "Value";
+
+															col0
+																	.appendChild(p01);
+
+															row0
+																	.appendChild(col0);
+															col02
+																	.appendChild(p02);
+															row0
+																	.appendChild(col02);
+															alertGroup
+																	.appendChild(row0);
+
+															/* 								var table = document
+															 .createElement("table");
+															 table.setAttribute('id', 'table');
+															 // CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
+															 var thead = document
+															 .createElement("thead");
+															 table.appendChild(thead);
+															 var tr = document.createElement("tr");
+															 thead.appendChild(tr)// TABLE ROW.
+															 var th = document
+															 .createElement("th");
+															 th.innerHTML = "Name";
+															 tr.appendChild(th);
+															 var th = document
+															 .createElement("th");
+															 th.innerHTML = "Value";
+															 tr.appendChild(th); */
+															/* 								for (var i = 0; i < col.length; i++) {
+															 var th = document
+															 .createElement("th");
+															 var string = col[i];
+															 var newString = string.indexOf('_') == 0 ? string
+															 .substring(1)
+															 : string;
+															 th.innerHTML = newString;
+															 tr.appendChild(th);
+															 }
+															 */// ADD JSON DATA TO THE TABLE AS ROWS.
+															/* 	var tbody = document
+																		.createElement("tbody");
+															 */
+															for (var i = 0; i < result.length; i++) {
+																for (var j = 0; j < col.length; j++) {
+																	var alerts = document
+																			.createElement("div");
+																	alerts
+																			.setAttribute(
+																					'class',
+																					'row');
+																	var value = "";
+																	if (result[i][col[j]] == null) {
+																		result[i][col[j]] = "N/A";
+																	}
+
+																	var col1 = document
+																			.createElement("div");
+
+																	col1
+																			.setAttribute(
+																					'class',
+																					'col-sm-2 col-xs-2 col-md-2 col-lg-2 ');
+
+																	col1
+																			.setAttribute(
+																					'style',
+																					'font-weight: bold; text-transform: uppercase; padding-top: 1px;  float:left;');
+																	var p1 = document
+																			.createElement("p");
+																	p1
+																			.setAttribute(
+																					'class',
+																					'bg-success text-capitalize text-success lead font-weight-bold');
+																	p1.innerHTML = col[j];
+																	var col2 = document
+																			.createElement("div");
+																	col2
+																			.setAttribute(
+																					'class',
+																					'col-sm-4 col-xs-4 col-md-4 col-lg-4');
+																	col2
+																			.setAttribute(
+																					'style',
+																					'font-weight: bold; text-transform: uppercase; padding-top: 1px;  float:left;');
+																	var p2 = document
+																			.createElement("p");
+																	p2
+																			.setAttribute(
+																					'class',
+																					'bg-success text-capitalize text-success lead font-weight-bold');
+																	p2.innerHTML = result[i][col[j]];
+																	col1
+																			.appendChild(p1);
+
+																	alerts
+																			.appendChild(col1);
+																	col2
+																			.appendChild(p2);
+																	alerts
+																			.appendChild(col2);
+
+																	//value = col[j]+" \t  : \t "+result[i][col[j]]; 
+
+																	/* 																	alert.innerHTML = value;
+																	 */alertGroup
+																			.appendChild(alerts);
+
+																	/* 	<div class="container">
+																	<div class="row">
+																		<div class="alert-group">
+																	        <div class="alert alert-success alert-dismissable">
+																	            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+																	            <strong>Well done!</strong> You successfully read this important alert message.
+																	        </div>
+																	      
+																	    </div>
+																	</div>
+																	</div> */
+																	/* 
+																	 var tr1 = document
+																	 .createElement("tr");
+																	 var td = document
+																	 .createElement("td");
+																	 var tdq = document
+																	 .createElement("td");
+																	 //										alert(col[j]+ ":   "+ result[i][col[j]]);
+																	 tdq.innerHTML =col[j];
+																	 tr1.appendChild(tdq);
+																	 td.innerHTML = result[i][col[j]];
+																	 tr1.appendChild(td);
+																	 tbody.appendChild(tr1);
+																	 */}
+															}
+															row
+																	.appendChild(alertGroup);
+															container
+																	.appendChild(row);
+
+															/* 								table.appendChild(tbody);
+															 */// FINALLY ADD THE NEWLY CREATED TABLE WITH JSON DATA TO A CONTAINER.
+															var divContainer = document
+																	.getElementById("ajaxGetUserServletResponse");
+															divContainer.innerHTML = "";
+															divContainer
+																	.appendChild(container);
+															/* $('#table').DataTable({
+																"sScrollY" : true,
+																"scrollX" : true,
+																"scrollCollapse" : true,
+																"fixedHeader" : {
+																	"header" : true,
+																	"footer" : false
+																},
+																"fixedColumns" : {
+																	"leftColumns" : 1,
+																	"rightColumns" : 1
+																}
+															}); */
+														}
+													});
+										});
+					});
+</script>
+</head>
+
+<body>
+	<nav
+		class="navbar navbar-expand-lg mb-4 top-bar navbar-static-top sps sps--abv">
+		<div class="container">
+			<a class="navbar-brand mx-auto" href="home">Ranking<span>Enzymes</span></a>
+		</div>
+	</nav>
+	<div class="row"
+		style="padding-top: 80px !important; padding-bottom: 25px !important; padding-left: 80px !important;">
+	</div>
+		<div class="col-md-4 col-lg-4 col-sm-4 col-xs-4">
+			<div class="container ">
+				<div class="row ">
+
+					<!-- 			<form class="form-horizontal" id="searchCazymes-form"
+					name="searchCazymes-form" role="form" autocomplete="off"
+					 method="post">
+	 -->
+					<div style="width: 300px;" class="autocomplete  absolute"
+						role="menu">
+						<div class="form-group ">
+							<label for="filter">Order By</label> <select id="orderCriteria"
+								name="orderCriteria" class="form-control">
+								<option value="" selected>Choose here</option>
+								<option value="asc">Ascending Order</option>
+								<option value="desc">Descending Order</option>
+							</select>
+						</div>
+						<div class="form-group">
+							<label for="contain">Contains the words</label> <input
+								id="myInput" class="form-control" type="text" name="cAzymes"
+								placeholder="Search Genome" />
+						</div>
+						<div class="form-group">
+							<input type="submit" id="myInputIdButton" name="myInputIdButton"
+								class="btn btn-primary icon icon-search glyphicon glyphicon-search"
+								aria-hidden="true" />
+						</div>
+					</div>
+					<!-- 				</form>
+ -->
+				</div>
+			</div>
+		</div>
+		<script>
+			autocomplete(document.getElementById("myInput"), genomeNames);
+		</script>
+		<div class="col-md-8 col-lg-8 col-sm-8 col-xs-8  ">
+			<div id="ajaxGetUserServletResponse"></div>
+		</div>
+	<div class="row"
+		style="padding-top: 50px !important; padding-right: 30px !important; padding-bottom: 50px !important; padding-left: 80px !important;">
+	</div>
+
+<footer>
+	<section id="footer" class="footer">
+		<div class="container footer_contents">
+			<div class="row text-center text-xs-center text-sm-left text-md-left">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+					<ul class="list-unstyled quick-links">
+						<li><a href="team"><i class="home"></i>Team</a></li>
+						<li><a href="about"><i class="fa fa-angle-double-right"></i>About</a></li>
+						<li><a href="metapage"><i class="about"></i>Metadata Page
+								of Website</a></li>
+						<li><a href="landInLogin"><i class="landInLogin"></i>Login</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+					<ul class="list-unstyled quick-links">
+						<li><a href="team"><i class="home"></i>Team</a></li>
+						<li><a href="about"><i class="fa fa-angle-double-right"></i>About</a></li>
+						<li><a href="metapage"><i class="about"></i>Metadata Page
+								of Website</a></li>
+						<li><a href="landInLogin"><i class="landInLogin"></i>Login</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+					<ul class="list-unstyled quick-links">
+						<li><a href="team"><i class="home"></i>Team</a></li>
+						<li><a href="about"><i class="fa fa-angle-double-right"></i>About</a></li>
+						<li><a href="metapage"><i class="about"></i>Metadata Page
+								of Website</a></li>
+						<li><a href="landInLogin"><i class="landInLogin"></i>Login</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row" align="center">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></div>
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+					<div class="row" align="center">
+						<ul class="list-unstyled list-inline social text-center">
+							<li class="list-inline-item"><a href="javascript:void();"><i
+									class="fa fa-facebook"></i></a></li>
+							<li class="list-inline-item"><a href="javascript:void();"><i
+									class="fa fa-twitter"></i></a></li>
+							<li class="list-inline-item"><a href="javascript:void();"><i
+									class="fa fa-instagram"></i></a></li>
+							<li class="list-inline-item"><a href="javascript:void();"><i
+									class="fa fa-google-plus"></i></a></li>
+							<li class="list-inline-item"><a href="javascript:void();"
+								target="_blank"><i class="fa fa-envelope"></i></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></div>
+			</div>
+		</div>
+
+	</section>
+	</footer>
+</body>
+</html>

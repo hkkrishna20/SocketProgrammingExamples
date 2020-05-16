@@ -1,0 +1,10 @@
+logging.level:
+  org.springframework: WARN
+  com.couchbase.client: WARN
+  org.javacode.spring.beer: DEBUG
+couchbase:
+  adminUsername: admin
+  adminPassword: admin123
+  bucket:
+    name: beer_sample
+beerDemo.initialize: ${BEER_DEMO_INITIALIZE:false}

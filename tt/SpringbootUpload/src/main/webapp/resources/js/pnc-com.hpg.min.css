@@ -1,0 +1,9 @@
+.hero-login-wrapper{padding-top:10px;overflow:hidden;background:#fff}
+.homepage-hero .scalingBgImage{background-repeat:no-repeat;background-position:center top}
+.homepage-hero h1{font:30px/30px "PNC Brand Bold",Arial,sans-serif;padding-top:12px;padding-bottom:12px;text-align:center;margin:0}
+.homepage-hero h2{font:30px/30px "PNC Brand Light",Arial,sans-serif;color:#484848;margin:0}
+.homepage-hero p{color:#484848;font:12px/19px Arial,sans-serif}
+*/@media only screen and (min-width:600px){.hero-header-parsys{width:640px;margin:0 auto}
+}
+@media screen and (min-width:980px){.hero-header-parsys{margin:0 auto;width:960px}
+}

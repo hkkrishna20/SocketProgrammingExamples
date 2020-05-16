@@ -1,0 +1,78 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>name.javacode</groupId>
+	<artifactId>longest-prefix</artifactId>
+	<version>1.0</version>
+	<packaging>jar</packaging>
+
+	<name>longest-prefix</name>
+	<url>https://github.com/javacode</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<commons.lang3.version>3.7</commons.lang3.version>
+		<handlebars.spring.boot.starter.version>0.3.1</handlebars.spring.boot.starter.version>
+		<handlebars.helpers.version>4.1.0</handlebars.helpers.version>
+		<junit.version>4.12</junit.version>
+		<logback.version>1.2.3</logback.version>
+		<lombok.version>1.16.18</lombok.version>
+		<mockito.version>2.20.1</mockito.version>
+		<modelmapper.version>2.1.0</modelmapper.version>
+		<clover.version>4.2.1</clover.version>
+		<java.version>1.8</java.version>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<commons.lang3.version>3.7</commons.lang3.version>
+		<handlebars.spring.boot.starter.version>0.3.1</handlebars.spring.boot.starter.version>
+		<handlebars.helpers.version>4.1.0</handlebars.helpers.version>
+		<junit.version>4.12</junit.version>
+		<logback.version>1.2.3</logback.version>
+		<lombok.version>1.16.18</lombok.version>
+		<mockito.version>2.20.1</mockito.version>
+		<modelmapper.version>2.1.0</modelmapper.version>
+		<clover.version>4.2.1</clover.version>
+	</properties>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<encoding>${project.build.encoding}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<encoding>${project.build.encoding}</encoding>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

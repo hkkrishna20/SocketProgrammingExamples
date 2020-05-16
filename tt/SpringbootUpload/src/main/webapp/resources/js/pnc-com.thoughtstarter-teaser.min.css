@@ -1,0 +1,108 @@
+.btn-wrapper{position:relative;top:11px}
+.thoughtstarter-hero .btn-wrapper{position:relative;top:6px}
+.thoughtstarter-content-inner .btn-wrapper{position:relative;margin:0}
+.thoughtstarter-mega .content-wrapper{width:600px}
+.thoughtstarter-mega .btn-wrapper{bottom:0}
+.mega-thoughtstarter-hero .btn-wrapper{top:15px}
+input.thoughtstarter-input::-webkit-input-placeholder{text-align:center}
+input.thoughtstarter-input:-moz-placeholder{text-align:center}
+input.thoughtstarter-input::-moz-placeholder{text-align:center}
+input.thoughtstarter-input:-ms-input-placeholder{text-align:center}
+input.thoughtstarter-input{height:30px;color:#000;background:#fff;border:1px solid #f1efef;font:normal 12px/15px "PNC Brand Medium",Arial,sans-serif;padding:0;box-sizing:border-box;-webkit-box-shadow:inset 0 1px 3px 1px #d6d6d6;box-shadow:inset 0 1px 3px 1px #d6d6d6;text-align:center;margin-bottom:8px}
+.mobile-hero .mobile-standard,.mobile-minimal input{display:block;margin:auto;margin-bottom:8px}
+button.btn-gray.thoughtstarter-submit,button.btn-blue.thoughtstarter-submit,button.btn-orange.thoughtstarter-submit{margin:0 auto;display:block}
+.left-centered input.thoughtstarter-input{position:relative;left:12.5%}
+.left-centered .thoughtstarter-submit{position:relative;left:12.5%}
+.right-centered input.thoughtstarter-input{position:relative;right:12.5%}
+.right-centered .thoughtstarter-submit{position:relative;right:12.5%}
+.tdp-container .thoughtstarter-teaser-container .thoughtstarter-teaser{clear:both}
+.tdp-container .minimal-thoughtstarter-teaser{width:300px;margin:0 auto}
+.tdp-container .thoughtstarter-teaser{width:100% !important}
+.homepage-tout-container .btn-gray a,.thoughtstarter-teaser-container .btn-gray a,.thoughtstarter-teaser-container .btn-orange a{margin:0}
+.homepage-tout-container .touts{padding-bottom:10px}
+.tout-container-parsys{padding-bottom:10px;overflow:hidden;background:#fff}
+.thoughtstarter-teaser-container .content-inner{overflow:hidden;height:1500px}
+.thoughtstarter-teaser{padding:10px;background:url(../img/tout_item_shadow_mobile.png) no-repeat bottom center;background-size:70% 10px}
+.thoughtstarter-teaser .content-inner{height:100%}
+.thoughtstarter-teaser h1,.thoughtstarter-teaser h3{font-family:"PNC Brand Medium",Arial,sans-serif;font-size:16px;line-height:18px;margin:0;color:#484848;padding-bottom:10px}
+.thoughtstarter-teaser h4{font-size:10px;margin:0 0 10px;text-align:left}
+.thoughtstarter-teaser p{font-family:Arial,sans-serif;font-size:12px;color:#484848;line-height:14px;margin:0;padding:0 0 10px 0}
+.thoughtstarter-teaser .thoughtstarter-mega p{font-size:18px;line-height:22px}
+.thoughtstarter-teaser .content-wrapper{height:160px;position:relative;padding-bottom:0;margin-bottom:0}
+.thoughtstarter-teaser-container .hero-thoughtstarter-teaser .content-inner{width:auto;height:100%}
+.thoughtstarter-teaser-container .mega-thoughtstarter-teaser .content-inner{width:auto;height:100%}
+.thoughtstarter-teaser .left-justified{clear:both;text-align:left}
+.thoughtstarter-teaser .left-centered{text-align:center;width:62.5%}
+.thoughtstarter-teaser .centered{text-align:center}
+.thoughtstarter-teaser .right-centered{text-align:center;width:62.5%;margin-left:37.5%}
+.thoughtstarter-teaser .right-justified{text-align:right}
+.thoughtstarter-standard,.thoughtstarter-hero{height:178px;position:relative;margin:0 auto;padding:20px 20px 40px;border:1px solid #ddd}
+.mobile-hero .thoughtstarter-minimal,.mobile-standard .thoughtstarter-minimal{width:268px;height:188px;position:relative;margin:0 auto;padding:15px 15px 35px;border:1px solid #ddd}
+.mobile-hero .minimal-tout-bg,.mobile-standard .minimal-tout-bg{margin:0 auto}
+.mobile-hero .minimal-tout-bg,.mobile-standard .minimal-tout-bg .tablet-mobile{margin:0 auto;background:url('../img/MINIMAL_TS_BG_default.jpg') center no-repeat}
+.thoughtstarter-minimal{width:80%;margin:auto;text-align:center;padding:20px;height:auto;border:0;background:0}
+.tag-bar a{margin:0 0 0 5px;color:#f58025}
+.mobile-hero .thoughtstarter-minimal .tag-bar,.mobile-standard .thoughtstarter-minimal .tag-bar,.tag-bar{margin:0 0 0 -15px;height:20px;width:288px;text-align:left;bottom:0;position:absolute;padding:0 5px;background:url(../img/tagbar_bg.png) top left repeat;color:#333;font:10px/20px Arial,sans-serif}
+.tag-bar{margin:0 0 0 -20px}
+.thoughtstarter-minimal .tag-bar{margin:10px 0 0 0;text-align:center;position:relative;width:auto}
+.mobile-hero,.mobile-standard{display:block}
+.thoughtstarter-hero,.standard-container{display:none}
+.mobile-image{width:268px;height:188px;position:relative;margin:0 auto;padding:15px 15px 35px;border:1px solid #ddd}
+.thoughtstarter-mega .thoughtstarter-content-inner .content-wrapper h1{font-size:36px;line-height:42px;padding-bottom:12px;margin:0}
+.mega-thoughtstarter-hero{display:none}
+.thoughtstarter-mega{display:none}
+@media only screen and (max-width:599px){.thoughtstarter-mega{display:none}
+.mobile-minimal .thoughtstarter-minimal a{top:30px;transition:all .35s ease-in-out 0}
+.mobile-minimal .tablet-mobile a{top:8px}
+}
+@media only screen and (min-width:600px){button.btn-gray.thoughtstarter-submit,button.btn-blue.thoughtstarter-submit,button.btn-orange.thoughtstarter-submit{margin:0;display:inline}
+.minimal-tout-bg{background:0}
+.thoughtstarter-teaser-container .content-inner{width:600px;margin:0 auto}
+.thoughtstarter-teaser .thoughtstarter-hero h1,.thoughtstarter-teaser .thoughtstarter-standard h3{font-size:24px;line-height:28px;padding-bottom:12px;margin:0}
+.thoughtstarter-teaser .thoughtstarter-hero p,.thoughtstarter-teaser .thoughtstarter-standard p{margin:0 0 10px;font:14px/18px Arial,Helvetica,sans-serif}
+.thoughtstarter-description{line-height:18px}
+.thoughtstarter-teaser{position:relative;border-top:0}
+.thoughtstarter-teaser-container .section-3{margin-right:0}
+.thoughtstarter-teaser .hp-tout-inner{width:158px;height:216px;position:absolute;top:20px;z-index:2;padding:15px 10px 0 10px;left:3px}
+.thoughtstarter-teaser .description{display:block}
+.thoughtstarter-mega .description{padding-bottom:8px}
+.thoughtstarter-teaser .tout-bg{display:block;position:absolute;overflow:hidden;width:178px;height:225px;top:21px;z-index:1;left:3px}
+.thoughtstarter-hero,.thoughtstarter-standard{width:578px}
+.homepage-tout-container{width:640px;margin:0 auto}
+.homepage-tout-container .section-3{margin-right:0}
+.thoughtstarter-hero .tag-bar,.thoughtstarter-standard .tag-bar{width:608px}
+.mobile-hero,.mobile-standard{display:none}
+.thoughtstarter-hero,.standard-container{display:block}
+.thoughtstarter-hero .content-wrapper a{position:relative;top:85px}
+.mega-thoughtstarter-hero{display:block}
+.thoughtstarter-mega{height:178px;margin:0 auto;width:576px;padding:20px 20px 40px}
+.btn-wrapper{position:relative;top:5px}
+}
+@media only screen and (max-width:980px) and (min-width:600px){.mobile-minimal .tablet-hero{height:178px;position:relative;margin:0 auto;padding:20px 20px 40px;border:1px solid #ddd;width:578px}
+.mobile-minimal .tablet-hero p{width:400px;margin:0 auto;font:14px/18px Arial,Helvetica,sans-serif}
+.mobile-minimal .tablet-hero h1{width:300px;margin:0 auto;font-size:20px;line-height:19px}
+.mobile-minimal .tablet-hero .btn-blue a{position:relative;top:-24px}
+.mobile-minimal .tablet-hero .btn-orange a{position:relative;top:-24px}
+}
+@media only screen and (min-width:980px){.thoughtstarter-mega{display:block}
+.mega-thoughtstarter-hero{display:none}
+.mobile-minimal .mobile-image .btn-blue,.mobile-minimal .mobile-image .btn-gray,.mobile-minimal .mobile-image .ghost,.mobile-minimal .mobile-image .btn-orange{position:relative;top:0}
+.tablet-mobile{background:center}
+.minimal-tout-bg{background:url('../img/MINIMAL_TS_BG_default.jpg') left top no-repeat}
+.thoughtstarter-minimal{width:268px;height:188px;position:relative;margin:0 auto;padding:15px 15px 35px;border:1px solid #ddd}
+.homepage-tout-container{width:960px}
+.thoughtstarter-teaser-container .content-inner{width:960px}
+.thoughtstarter-teaser .hp-tout-inner{width:278px;height:223px}
+.thoughtstarter-teaser .tout-bg{width:298px;height:238px}
+.thoughtstarter-teaser{float:left}
+.thoughtstarter-teaser .thoughtstarter-mega{height:491px}
+.thoughtstarter-standard{width:418px}
+.thoughtstarter-teaser .thoughtstarter-standard h3{font-size:20px;line-height:22px;padding-bottom:10px;margin:0}
+.thoughtstarter-teaser .thoughtstarter-standard p{margin:0 0 18px;font:13px/16px Arial,Helvetica,sans-serif}
+.thoughtstarter-hero{width:578px}
+.thoughtstarter-minimal .tag-bar{width:288px;margin:0 0 0 -15px;text-align:left;bottom:0;position:absolute}
+.thoughtstarter-standard .tag-bar{width:448px}
+.thoughtstarter-mega{width:960px;height:459px;position:relative;margin:0 auto;padding:20px 20px 40px;padding-left:0}
+.thoughtstarter-hero .btn-wrapper{position:relative}
+.btn-wrapper{position:relative;top:11px}
+}

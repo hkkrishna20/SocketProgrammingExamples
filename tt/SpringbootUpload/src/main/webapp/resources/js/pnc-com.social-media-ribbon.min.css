@@ -1,0 +1,58 @@
+.social-media-ribbon-container{background-color:#f3f3f3;padding:8px}
+.social-media-ribbon-container .smr-arrow{display:none}
+.social-media-ribbon-container .smr-cell{text-align:left}
+.social-media-ribbon-container .smr-link{color:#484848;display:inline-block}
+.social-media-ribbon-container .smr-img{vertical-align:top}
+.social-media-ribbon-container h3{display:inline-block;font:15px/1em "PNC Brand Medium",Arial,sans-serif}
+.social-media-ribbon-container .smr-link:hover h3,.social-media-ribbon-container .smr-link:active h3,.social-media-ribbon-container .smr-feed a:hover time,.social-media-ribbon-container .smr-feed a:active time,.social-media-ribbon-container .smr-feed a:hover,.social-media-ribbon-container .smr-feed a:active{text-decoration:underline}
+.social-media-ribbon-container .smr-feed{display:none}
+.social-media-ribbon-container .social-media-ribbon-tout.ribbon-tout-3{display:none !important}
+@media only screen and (min-width:320px){.social-media-ribbon-container{padding:0 20px}
+#social-media-ribbon-carousel{display:inline-block;height:126px;width:980px}
+.social-media-ribbon-container .content-inner{border-top:1px solid #ccc;margin:0 auto;overflow:hidden;padding:32px 0;text-align:center;width:282px}
+.social-media-ribbon-container .social-media-ribbon-tout{background:url(../img/bg_smrt_m.png) no-repeat scroll center center transparent;display:inline-block;height:125px;margin:0 17px;position:relative;vertical-align:top;width:290px}
+.social-media-ribbon-container .smr-cell{display:block;height:114px;margin:2px}
+.social-media-ribbon-container .smr-link{margin:-6px 0;padding-left:6px}
+.social-media-ribbon-container .smr-feed{display:block;height:80px;overflow:hidden;padding:2px 10px;position:relative}
+.social-media-ribbon-container .smr-feed h4,.social-media-ribbon-container .smr-feed p,.social-media-ribbon-container .smr-feed time{display:inline-block;margin:0;vertical-align:top}
+.social-media-ribbon-container .smr-feed h4,.social-media-ribbon-container .smr-feed h4 a{color:#484848;font-family:"PNC Brand Medium",Arial,sans-serif}
+.social-media-ribbon-container .smr-feed p{color:#b4b4b4;font-family:"PNC Brand Regular",Arial,sans-serif}
+.social-media-ribbon-container .smr-facebook .smr-feed p,.social-media-ribbon-container .smr-facebook .smr-feed time{width:212px}
+.social-media-ribbon-container .smr-youtube .smr-feed h4,.social-media-ribbon-container .smr-youtube .smr-feed p{width:182px}
+.social-media-ribbon-container .smr-twitter .smr-feed h4,.social-media-ribbon-container .smr-twitter .smr-feed p{width:212px}
+.social-media-ribbon-container .smr-feed img{float:left;margin-right:10px;margin-bottom:16px}
+.social-media-ribbon-container .smr-facebook .smr-feed img{width:38px}
+.social-media-ribbon-container .smr-youtube .smr-feed img{height:40px}
+.social-media-ribbon-container .smr-twitter .smr-feed img{width:38px}
+}
+@media only screen and (min-width:600px){.social-media-ribbon-container{padding:0}
+.social-media-ribbon-container .content-inner{padding:32px 0;width:580px}
+#social-media-ribbon-carousel{height:auto;width:auto}
+.cq-wcm-edit #social-media-ribbon-carousel{width:100%}
+.social-media-ribbon-container .social-media-ribbon-tout{background:url(../img/bg_smrt_t.png) no-repeat scroll center center transparent;height:142px;margin:0;width:186px}
+.cq-wcm-edit .social-media-ribbon-container .social-media-ribbon-tout{float:left}
+.social-media-ribbon-container .social-media-ribbon-tout.ribbon-tout-1,.social-media-ribbon-container .social-media-ribbon-tout.ribbon-tout-2{margin-right:8px}
+.social-media-ribbon-container .smr-cell{height:132px;margin:1px}
+.social-media-ribbon-container .smr-feed{height:90px}
+.social-media-ribbon-container .smr-facebook .smr-feed p,.social-media-ribbon-container .smr-facebook .smr-feed time{width:116px}
+.social-media-ribbon-container .smr-youtube .smr-feed h4,.social-media-ribbon-container .smr-youtube .smr-feed p{width:86px}
+.social-media-ribbon-container .smr-twitter .smr-feed h4,.social-media-ribbon-container .smr-twitter .smr-feed p{width:116px}
+.social-media-ribbon-container .smr-youtube .smr-feed img{height:50px}
+}
+@media screen and (min-width:980px){.social-media-ribbon-container .content-inner{margin:0 auto;padding:36px 0;width:940px}
+.cq-wcm-edit #social-media-ribbon-carousel{width:844px}
+.social-media-ribbon-container .smr-arrow{background:url(../img/sprite_smr_arrows.png) no-repeat scroll center center transparent;display:inline-block;height:111px;text-indent:-9999px;vertical-align:top;visibility:hidden;width:30px}
+.cq-wcm-edit .social-media-ribbon-container .smr-arrow{display:none}
+.social-media-ribbon-container .smr-arrow-left{background-position:0 center;margin-right:12px}
+.social-media-ribbon-container .smr-arrow-right{background-position:-15px center;margin-left:12px}
+.social-media-ribbon-container .social-media-ribbon-tout{background:url(../img/bg_smrt_d.png) no-repeat scroll center center transparent;height:139px;width:270px}
+.social-media-ribbon-container .social-media-ribbon-tout.ribbon-tout-1,.social-media-ribbon-container .social-media-ribbon-tout.ribbon-tout-2{margin-right:17px}
+.social-media-ribbon-container .smr-cell{height:115px}
+.social-media-ribbon-container .smr-feed{height:90px}
+.social-media-ribbon-container .smr-facebook .smr-feed p,.social-media-ribbon-container .smr-facebook .smr-feed time{width:200px}
+.social-media-ribbon-container .smr-youtube .smr-feed h4,.social-media-ribbon-container .smr-youtube .smr-feed p{width:170px}
+.social-media-ribbon-container .smr-twitter .smr-feed h4,.social-media-ribbon-container .smr-twitter .smr-feed p{width:200px}
+}
+.slide-markers{text-align:center;display:block;width:auto;margin:auto}
+.slide-markers div{width:23px;height:12px;display:inline-block;text-indent:-9999px;margin:0;background:url(../img/swipe_slider_marker.png) no-repeat center top}
+.slide-markers div.active-slide{background-position:center bottom}

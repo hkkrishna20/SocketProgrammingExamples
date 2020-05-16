@@ -1,0 +1,11 @@
+spring.application.name: template-resolver
+template.baseUri: ${BASE_URI}
+logging.level.org.springframework: ERROR
+logging.level.org.javacode: ERROR
+spring:
+  main:
+    banner-mode: "off"
+---
+spring.profiles: default
+template.git.localRepoPath: ${LOCAL_REPO:}
+

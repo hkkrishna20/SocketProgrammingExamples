@@ -1,0 +1,69 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>name.javacode.webservices.jaxws</groupId>
+    <artifactId>jax-ws</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>jax-ws-deploy-descriptor</artifactId>
+  <packaging>war</packaging>
+  <name>jax-ws-deploy-descriptor</name>
+
+  <description>
+    JAX-WS customization using deployment descriptor (webservice.xml).
+    
+    <![CDATA[
+      Run 'mvn clean package wildfly:run -P wildfly' from the basedir then run the main classes in the project.
+      To run integration tests, run 'mvn clean install -P wildfly-arq'.     
+    ]]>
+  </description>
+
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>name.javacode.maven</groupId>
+            <artifactId>maven-enforcer-rules-engine</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>bannedProfiles</id>
+            <configuration>
+              <rules>
+                <bannedProfiles
+                  implementation="name.javacode.maven.enforcer.rule.BannedProfiles">
+                  <profiles>
+                    jetty
+                  </profiles>
+                </bannedProfiles>
+              </rules>
+            </configuration>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>jax-ws-handlers</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.arquillian.junit</groupId>
+      <artifactId>arquillian-junit-container</artifactId>
+    </dependency>
+  </dependencies>
+
+</project>

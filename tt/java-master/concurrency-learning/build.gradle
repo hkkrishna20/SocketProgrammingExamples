@@ -1,0 +1,61 @@
+apply plugin: 'idea'
+apply plugin: 'groovy'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+apply from: "$gradleCommonUrl"
+
+group = 'org.javacode'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+// RxJava 2.x SNAPSHOT
+repositories {
+    maven { url 'https://oss.jfrog.org/libs-snapshot' }
+}
+
+dependencies {
+    compileOnly(
+            "org.projectlombok:lombok:$lombokVersion"
+    )
+
+    compile("javax.ws.rs:javax.ws.rs-api:$jaxrsVersion",
+            "org.glassfish.jersey.core:jersey-client:$jerseyVersion",
+            "org.glassfish.jersey.media:jersey-media-json-jackson:$jerseyVersion",
+            "com.fasterxml.jackson.core:jackson-core:$jacksonVersion",
+            "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
+            "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion",
+            "org.jsoup:jsoup:$jsoupVersion",
+            "io.reactivex.rxjava2:rxjava:$rxjavaVersion",
+            "io.projectreactor:reactor-core:$reactorVersion",
+            "com.typesafe.akka:akka-actor_2.11:$akkaVersion",
+            "com.typesafe.akka:akka-slf4j_2.11:$akkaVersion",
+            "org.scala-lang:scala-library:$scalaVersion",
+            "org.slf4j:slf4j-api:$slf4jVersion",
+            "io.javaslang:javaslang:$javaslangVersion",
+            "org.apache.commons:commons-compress:$commonsCompressVersion"
+    )
+
+    testCompile("org.hamcrest:hamcrest-all:$hamcrestVersion",
+            "org.spockframework:spock-core:$spockVersion",
+            "org.codehaus.groovy:groovy-all:$groovyVersion",
+            "com.typesafe.akka:akka-testkit_2.11:$akkaVersion",
+            "org.projectlombok:lombok:$lombokVersion"
+    )
+    testRuntime(
+            "cglib:cglib-nodep:$cglibVersion"
+    )
+
+    compile("ch.qos.logback:logback-core:$logbackVersion",
+            "ch.qos.logback:logback-classic:$logbackVersion"
+    )
+}
+
+test {
+    systemProperties['java.util.logging.config.file'] = file('src/test/resources/logging.properties').absolutePath
+}
